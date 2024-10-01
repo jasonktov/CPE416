@@ -11,11 +11,10 @@ class MinimalSubscriber(Node):
         # Create a subsription object
         self.subscription = self.create_subscription(
             String,
-            'topic',
+            'my_topic',
             self.listener_callback,
             10)
-        s
-        elf.subscription  # prevent unused variable warning
+        self.subscription  # prevent unused variable warning
 
     def listener_callback(self, msg):
         self.get_logger().info('I heard: "%s"' % msg.data)

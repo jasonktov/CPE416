@@ -13,7 +13,7 @@ class MinimalPublisher(Node):
         # Create a publisher object
         # Arguments include the type of message, the name of the topic,
         # and the queue size
-        self.publisher_ = self.create_publisher(String, 'topic', 10)
+        self.publisher_ = self.create_publisher(String, 'my_topic', 10)
 
         # Create a time class
         # This will make sure that the code runs at a specified
