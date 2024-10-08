@@ -10,7 +10,7 @@ from rclpy.node import Node
 
 # We have to use the geometry_msgs/msg/Twist to control robots
 # Write in here what the correct import should be
-from geometry_msgs.msg
+from geometry_msgs.msg ?
 
 class DrawSquare(Node):
 
