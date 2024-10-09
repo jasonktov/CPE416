@@ -8,6 +8,11 @@ else
     CONTAINER_NAME = unknown
 endif
 
+# If when you run the command 'make arch' you get as output 'unknown'
+# then uncomment one of the following lines, depending on the your architecture 
+# CONTAINER_NAME := osrf/ros:humble-desktop
+# CONTAINER_NAME := arm64v8/ros:humble
+
 build: 
 	docker build . -t ${IMAGE_NAME}
 
