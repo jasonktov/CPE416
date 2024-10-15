@@ -13,7 +13,21 @@ from tf2_ros import TransformException
 import numpy as np
 
 ''' For this lab we are going to use the TF2 library provided by ROS
-to create an obstable detector node. 
+to create an obstable detector node. In the end we want the following transformation:
+
+--- odom2object
+
+The functions "transform_to_matrix" and "multiply_transforms" are provided
+as utility functions so that we can multiply two geometry_msgs/msg/TransformStamped
+data types.
+
+You're code should have one call the "multiply_transforms" function. That is all that
+is needed for this assignment. The idea is we calculate the laser2object transform and
+then get the odom2laser transfrom from the /tf topic (Note: this is NOT done through)
+subscriptions). Then we can multiply to get the following:
+odom2object = odom2laser * laser2object (Note: that the laser parts of the transforms "cancel out")
+
+Check the assignment notes for more information.
 '''
 
 class ObstacleDetectorImprovedNode(Node):
