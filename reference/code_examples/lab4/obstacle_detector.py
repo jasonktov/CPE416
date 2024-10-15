@@ -41,7 +41,10 @@ class ObstacleDetectorImprovedNode(Node):
         # We will use these variables to listen to the ROS2 transformation tree
         # and to broadcast our own transformation from Odom -> Object
         self.tf_buffer = tf2_ros.Buffer()
+        # this object let's us listen to the /tf topic
         self.tf_listener = tf2_ros.TransformListener(self.tf_buffer, self)
+
+        # this object let's us publish the transform to the /tf topic
         self.tf_broadcaster = tf2_ros.StaticTransformBroadcaster(self)
 
         # Arguments are:
@@ -131,7 +134,7 @@ class ObstacleDetectorImprovedNode(Node):
             odom2object_msg.header.frame_id = # Set correct parent frame
             odom2object_msg.child_frame_id = # Set correct child frame
 
-            self.tf_broadcaster.sendTransform(odom2object_msg)
+            # Call the broadcaster
 
 def main(args=None):
     rclpy.init(args=args)
