@@ -109,7 +109,8 @@ class ObstacleDetectorImprovedNode(Node):
         # Access the laser scan that is aligned with x-axis of the robot
         # Put it in a variable called 'distance'
 
-        if not np.isinf(distance):
+        # Check that the laser reading is not 'inf'
+        if :
 
             laser2object_msg = TransformStamped()
             # What is the transformation from the Lidar --> Object?
