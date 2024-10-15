@@ -12,6 +12,10 @@ from tf2_ros import TransformException
 
 import numpy as np
 
+''' For this lab we are going to use the TF2 library provided by ROS
+to create an obstable detector node. 
+'''
+
 class ObstacleDetectorImprovedNode(Node):
 
     def __init__(self):
@@ -85,7 +89,7 @@ class ObstacleDetectorImprovedNode(Node):
             return
 
         # Here:
-        # Access the laser that is aligned with x-axis of the robot
+        # Access the laser scan that is aligned with x-axis of the robot
         # Put it in a variable called 'distance'
 
         if not np.isinf(distance):

@@ -10,6 +10,10 @@ import select
 import tty
 import termios
 
+''' A node that reads in keyboard inputs to control the differential drive robot
+that we simulate using gazebo.
+'''
+
 class TeleopKeyboard(Node):
     def __init__(self):
         super().__init__('teleop_keyboard')
