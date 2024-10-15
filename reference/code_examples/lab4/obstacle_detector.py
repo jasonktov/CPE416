@@ -127,7 +127,6 @@ class ObstacleDetectorImprovedNode(Node):
             # functions to work with the robot: 'transform_to_matrix', 'multiply_transforms'
 
             # What order should the two transformations be multiplied?
-            odom2object_msg = self.multiply_transforms()
 
             odom2object_msg.header.frame_id = # Set correct parent frame
             odom2object_msg.child_frame_id = # Set correct child frame
