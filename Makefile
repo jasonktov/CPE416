@@ -1,17 +1,12 @@
 ARCH := $(shell uname -m)
 
 ifeq ($(ARCH), x86_64)
-    CONTAINER_NAME := osrf/ros:humble-desktop
+    CONTAINER_NAME := ambulantelab/cpe416:lab4-x86
 else ifeq ($(ARCH), arm64)
-    CONTAINER_NAME := arm64v8/ros:humble
+    CONTAINER_NAME := ambulantelab/cpe416:lab4-arm
 else
-    CONTAINER_NAME = unknown
+    CONTAINER_NAME = ambulantelab/cpe416:lab4-x86
 endif
-
-# If when you run the command 'make arch' you get as output 'unknown'
-# then uncomment one of the following lines, depending on the your architecture 
-# CONTAINER_NAME := osrf/ros:humble-desktop
-# CONTAINER_NAME := arm64v8/ros:humble
 
 build: 
 	docker build . -t ${IMAGE_NAME}
