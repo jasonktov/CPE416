@@ -34,7 +34,8 @@ class ObstacleDetectorImprovedNode(Node):
 
     def __init__(self):
         super().__init__('obstacle_detector_improved')
-        
+
+        # Task 1:
         self.scan_sub = self.create_subscription(
         )
 
@@ -96,7 +97,8 @@ class ObstacleDetectorImprovedNode(Node):
         result_transform.transform.rotation.w = result_rotation[3]
 
         return result_transform
-    
+
+    # Task 2:
     def scan_callback(self, msg):
         # Copy the data from the laser scanner into member variable
 
@@ -105,7 +107,7 @@ class ObstacleDetectorImprovedNode(Node):
         if not self.latest_laser.ranges:
             return
 
-        # Here:
+        # Task 3:
         # Access the laser scan that is aligned with x-axis of the robot
         # Put it in a variable called 'distance'
 
@@ -116,9 +118,11 @@ class ObstacleDetectorImprovedNode(Node):
             # What is the transformation from the Lidar --> Object?
             # Think in terms of 2D displacement
 
+            # Task 4:
             laser2object_msg.header.frame_id = # Set the correct parent frame
             laser2object_msg.child_frame_id = # Set correct child frame
 
+            # Task 5:
             try:
                 # Lookup transform
 
@@ -130,11 +134,13 @@ class ObstacleDetectorImprovedNode(Node):
             # since they have limited functionality. In this example, I have provided a some
             # functions to work with the robot: 'transform_to_matrix', 'multiply_transforms'
 
+            # Task 6:
             # What order should the two transformations be multiplied?
 
             odom2object_msg.header.frame_id = # Set correct parent frame
             odom2object_msg.child_frame_id = # Set correct child frame
 
+            # Task 7:
             # Call the broadcaster
 
 def main(args=None):
