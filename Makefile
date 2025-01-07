@@ -1,12 +1,5 @@
-ARCH := $(shell uname -m)
-
-ifeq ($(ARCH), x86_64)
-    CONTAINER_NAME := ambulantelab/cpe416:lab4-x86
-else ifeq ($(ARCH), arm64)
-    CONTAINER_NAME := ambulantelab/cpe416:lab4-arm
-else
-    CONTAINER_NAME = ambulantelab/cpe416:lab4-x86
-endif
+# Add the name of the image for this command to work!
+CONTAINER_NAME := ??
 
 build: 
 	docker build . -t ${IMAGE_NAME}
@@ -23,7 +16,7 @@ bash:
 	docker run -it --name ${NAME} \
 	--net=ros \
 	--env="DISPLAY=novnc:0.0" \
-	-v ./ros_ws:/CPE416/ros_ws:Z \
+	-v ./:/CPE416/:Z \
 	${CONTAINER_NAME} \
 
 arch:
