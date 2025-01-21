@@ -1,0 +1,6 @@
+Invoking command in '/CPE416/ros_ws/build/ros_gz_example_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /CPE416/ros_ws/src/ros_gz_project/ros_gz_example_description -DCMAKE_INSTALL_PREFIX=/CPE416/ros_ws/install/ros_gz_example_description
+Invoked command in '/CPE416/ros_ws/build/ros_gz_example_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /CPE416/ros_ws/src/ros_gz_project/ros_gz_example_description -DCMAKE_INSTALL_PREFIX=/CPE416/ros_ws/install/ros_gz_example_description
+Invoking command in '/CPE416/ros_ws/build/ros_gz_example_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /CPE416/ros_ws/build/ros_gz_example_description -- -j4 -l4
+Invoked command in '/CPE416/ros_ws/build/ros_gz_example_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /CPE416/ros_ws/build/ros_gz_example_description -- -j4 -l4
+Invoking command in '/CPE416/ros_ws/build/ros_gz_example_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /CPE416/ros_ws/build/ros_gz_example_description
+Invoked command in '/CPE416/ros_ws/build/ros_gz_example_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /CPE416/ros_ws/build/ros_gz_example_description

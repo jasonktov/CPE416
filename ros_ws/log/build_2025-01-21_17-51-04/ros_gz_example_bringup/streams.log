@@ -1,0 +1,47 @@
+[0.006s] Invoking command in '/CPE416/ros_ws/build/ros_gz_example_bringup': AMENT_PREFIX_PATH=/CPE416/ros_ws/install/ros_gz_example_gazebo:/CPE416/ros_ws/install/ros_gz_example_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/CPE416/ros_ws/install/ros_gz_example_gazebo:/CPE416/ros_ws/install/ros_gz_example_description:/opt/ros/humble IGN_GAZEBO_PLUGIN_PATH=/CPE416/ros_ws/install/ros_gz_example_gazebo/lib/ros_gz_example_gazebo IGN_GAZEBO_RESOURCE_PATH=/CPE416/ros_ws/install/ros_gz_example_gazebo/share/ros_gz_example_gazebo/worlds:/CPE416/ros_ws/install/ros_gz_example_description/share/ros_gz_example_description/models /usr/bin/cmake /CPE416/ros_ws/src/ros_gz_project/ros_gz_example_bringup -DCMAKE_INSTALL_PREFIX=/CPE416/ros_ws/install/ros_gz_example_bringup
+[0.037s] -- The C compiler identification is GNU 11.4.0
+[0.066s] -- The CXX compiler identification is GNU 11.4.0
+[0.070s] -- Detecting C compiler ABI info
+[0.116s] -- Detecting C compiler ABI info - done
+[0.121s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.121s] -- Detecting C compile features
+[0.121s] -- Detecting C compile features - done
+[0.124s] -- Detecting CXX compiler ABI info
+[0.174s] -- Detecting CXX compiler ABI info - done
+[0.179s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.179s] -- Detecting CXX compile features
+[0.179s] -- Detecting CXX compile features - done
+[0.184s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.246s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.321s] -- Found ros_gz_example_description: 0.0.0 (/CPE416/ros_ws/install/ros_gz_example_description/share/ros_gz_example_description/cmake)
+[0.323s] -- Found ros_gz_example_gazebo: 0.0.0 (/CPE416/ros_ws/install/ros_gz_example_gazebo/share/ros_gz_example_gazebo/cmake)
+[0.326s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.368s] -- Configuring done
+[0.381s] -- Generating done
+[0.387s] -- Build files have been written to: /CPE416/ros_ws/build/ros_gz_example_bringup
+[0.387s] Invoked command in '/CPE416/ros_ws/build/ros_gz_example_bringup' returned '0': AMENT_PREFIX_PATH=/CPE416/ros_ws/install/ros_gz_example_gazebo:/CPE416/ros_ws/install/ros_gz_example_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/CPE416/ros_ws/install/ros_gz_example_gazebo:/CPE416/ros_ws/install/ros_gz_example_description:/opt/ros/humble IGN_GAZEBO_PLUGIN_PATH=/CPE416/ros_ws/install/ros_gz_example_gazebo/lib/ros_gz_example_gazebo IGN_GAZEBO_RESOURCE_PATH=/CPE416/ros_ws/install/ros_gz_example_gazebo/share/ros_gz_example_gazebo/worlds:/CPE416/ros_ws/install/ros_gz_example_description/share/ros_gz_example_description/models /usr/bin/cmake /CPE416/ros_ws/src/ros_gz_project/ros_gz_example_bringup -DCMAKE_INSTALL_PREFIX=/CPE416/ros_ws/install/ros_gz_example_bringup
+[0.388s] Invoking command in '/CPE416/ros_ws/build/ros_gz_example_bringup': AMENT_PREFIX_PATH=/CPE416/ros_ws/install/ros_gz_example_gazebo:/CPE416/ros_ws/install/ros_gz_example_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/CPE416/ros_ws/install/ros_gz_example_gazebo:/CPE416/ros_ws/install/ros_gz_example_description:/opt/ros/humble IGN_GAZEBO_PLUGIN_PATH=/CPE416/ros_ws/install/ros_gz_example_gazebo/lib/ros_gz_example_gazebo IGN_GAZEBO_RESOURCE_PATH=/CPE416/ros_ws/install/ros_gz_example_gazebo/share/ros_gz_example_gazebo/worlds:/CPE416/ros_ws/install/ros_gz_example_description/share/ros_gz_example_description/models /usr/bin/cmake --build /CPE416/ros_ws/build/ros_gz_example_bringup -- -j4 -l4
+[0.405s] Invoked command in '/CPE416/ros_ws/build/ros_gz_example_bringup' returned '0': AMENT_PREFIX_PATH=/CPE416/ros_ws/install/ros_gz_example_gazebo:/CPE416/ros_ws/install/ros_gz_example_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/CPE416/ros_ws/install/ros_gz_example_gazebo:/CPE416/ros_ws/install/ros_gz_example_description:/opt/ros/humble IGN_GAZEBO_PLUGIN_PATH=/CPE416/ros_ws/install/ros_gz_example_gazebo/lib/ros_gz_example_gazebo IGN_GAZEBO_RESOURCE_PATH=/CPE416/ros_ws/install/ros_gz_example_gazebo/share/ros_gz_example_gazebo/worlds:/CPE416/ros_ws/install/ros_gz_example_description/share/ros_gz_example_description/models /usr/bin/cmake --build /CPE416/ros_ws/build/ros_gz_example_bringup -- -j4 -l4
+[0.414s] Invoking command in '/CPE416/ros_ws/build/ros_gz_example_bringup': AMENT_PREFIX_PATH=/CPE416/ros_ws/install/ros_gz_example_gazebo:/CPE416/ros_ws/install/ros_gz_example_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/CPE416/ros_ws/install/ros_gz_example_gazebo:/CPE416/ros_ws/install/ros_gz_example_description:/opt/ros/humble IGN_GAZEBO_PLUGIN_PATH=/CPE416/ros_ws/install/ros_gz_example_gazebo/lib/ros_gz_example_gazebo IGN_GAZEBO_RESOURCE_PATH=/CPE416/ros_ws/install/ros_gz_example_gazebo/share/ros_gz_example_gazebo/worlds:/CPE416/ros_ws/install/ros_gz_example_description/share/ros_gz_example_description/models /usr/bin/cmake --install /CPE416/ros_ws/build/ros_gz_example_bringup
+[0.417s] -- Install configuration: ""
+[0.417s] -- Installing: /CPE416/ros_ws/install/ros_gz_example_bringup/share/ros_gz_example_bringup/launch
+[0.418s] -- Installing: /CPE416/ros_ws/install/ros_gz_example_bringup/share/ros_gz_example_bringup/launch/diff_drive.launch.py
+[0.420s] -- Installing: /CPE416/ros_ws/install/ros_gz_example_bringup/share/ros_gz_example_bringup/config
+[0.421s] -- Installing: /CPE416/ros_ws/install/ros_gz_example_bringup/share/ros_gz_example_bringup/config/ros_gz_example_bridge.yaml
+[0.423s] -- Installing: /CPE416/ros_ws/install/ros_gz_example_bringup/share/ros_gz_example_bringup/config/diff_drive.rviz
+[0.425s] -- Installing: /CPE416/ros_ws/install/ros_gz_example_bringup/share/ament_index/resource_index/package_run_dependencies/ros_gz_example_bringup
+[0.427s] -- Installing: /CPE416/ros_ws/install/ros_gz_example_bringup/share/ament_index/resource_index/parent_prefix_path/ros_gz_example_bringup
+[0.428s] -- Installing: /CPE416/ros_ws/install/ros_gz_example_bringup/share/ros_gz_example_bringup/environment/ament_prefix_path.sh
+[0.430s] -- Installing: /CPE416/ros_ws/install/ros_gz_example_bringup/share/ros_gz_example_bringup/environment/ament_prefix_path.dsv
+[0.431s] -- Installing: /CPE416/ros_ws/install/ros_gz_example_bringup/share/ros_gz_example_bringup/environment/path.sh
+[0.432s] -- Installing: /CPE416/ros_ws/install/ros_gz_example_bringup/share/ros_gz_example_bringup/environment/path.dsv
+[0.433s] -- Installing: /CPE416/ros_ws/install/ros_gz_example_bringup/share/ros_gz_example_bringup/local_setup.bash
+[0.434s] -- Installing: /CPE416/ros_ws/install/ros_gz_example_bringup/share/ros_gz_example_bringup/local_setup.sh
+[0.436s] -- Installing: /CPE416/ros_ws/install/ros_gz_example_bringup/share/ros_gz_example_bringup/local_setup.zsh
+[0.437s] -- Installing: /CPE416/ros_ws/install/ros_gz_example_bringup/share/ros_gz_example_bringup/local_setup.dsv
+[0.438s] -- Installing: /CPE416/ros_ws/install/ros_gz_example_bringup/share/ros_gz_example_bringup/package.dsv
+[0.440s] -- Installing: /CPE416/ros_ws/install/ros_gz_example_bringup/share/ament_index/resource_index/packages/ros_gz_example_bringup
+[0.441s] -- Installing: /CPE416/ros_ws/install/ros_gz_example_bringup/share/ros_gz_example_bringup/cmake/ros_gz_example_bringupConfig.cmake
+[0.442s] -- Installing: /CPE416/ros_ws/install/ros_gz_example_bringup/share/ros_gz_example_bringup/cmake/ros_gz_example_bringupConfig-version.cmake
+[0.444s] -- Installing: /CPE416/ros_ws/install/ros_gz_example_bringup/share/ros_gz_example_bringup/package.xml
+[0.446s] Invoked command in '/CPE416/ros_ws/build/ros_gz_example_bringup' returned '0': AMENT_PREFIX_PATH=/CPE416/ros_ws/install/ros_gz_example_gazebo:/CPE416/ros_ws/install/ros_gz_example_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/CPE416/ros_ws/install/ros_gz_example_gazebo:/CPE416/ros_ws/install/ros_gz_example_description:/opt/ros/humble IGN_GAZEBO_PLUGIN_PATH=/CPE416/ros_ws/install/ros_gz_example_gazebo/lib/ros_gz_example_gazebo IGN_GAZEBO_RESOURCE_PATH=/CPE416/ros_ws/install/ros_gz_example_gazebo/share/ros_gz_example_gazebo/worlds:/CPE416/ros_ws/install/ros_gz_example_description/share/ros_gz_example_description/models /usr/bin/cmake --install /CPE416/ros_ws/build/ros_gz_example_bringup
