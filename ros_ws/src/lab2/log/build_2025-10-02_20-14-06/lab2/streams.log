@@ -1,0 +1,38 @@
+[3.565s] Invoking command in '/CPE416/ros_ws/src/lab2': PYTHONPATH=/CPE416/ros_ws/src/lab2/build/lab2/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/CPE416/ros_ws/src/lab2/install/lab2/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/lab2 build --build-base /CPE416/ros_ws/src/lab2/build/lab2/build install --record /CPE416/ros_ws/src/lab2/build/lab2/install.log --single-version-externally-managed install_data
+[4.932s] running egg_info
+[4.940s] creating build/lab2/lab2.egg-info
+[4.945s] writing build/lab2/lab2.egg-info/PKG-INFO
+[4.963s] writing dependency_links to build/lab2/lab2.egg-info/dependency_links.txt
+[4.988s] writing entry points to build/lab2/lab2.egg-info/entry_points.txt
+[4.998s] writing requirements to build/lab2/lab2.egg-info/requires.txt
+[5.005s] writing top-level names to build/lab2/lab2.egg-info/top_level.txt
+[5.020s] writing manifest file 'build/lab2/lab2.egg-info/SOURCES.txt'
+[5.188s] reading manifest file 'build/lab2/lab2.egg-info/SOURCES.txt'
+[5.417s] writing manifest file 'build/lab2/lab2.egg-info/SOURCES.txt'
+[5.425s] running build
+[5.427s] running build_py
+[5.442s] creating /CPE416/ros_ws/src/lab2/build/lab2/build
+[5.447s] creating /CPE416/ros_ws/src/lab2/build/lab2/build/lib
+[5.454s] creating /CPE416/ros_ws/src/lab2/build/lab2/build/lib/lab2
+[5.482s] copying lab2/draw_square.py -> /CPE416/ros_ws/src/lab2/build/lab2/build/lib/lab2
+[5.549s] copying lab2/__init__.py -> /CPE416/ros_ws/src/lab2/build/lab2/build/lib/lab2
+[5.597s] running install
+[5.600s] running install_lib
+[5.675s] creating /CPE416/ros_ws/src/lab2/install/lab2/lib/python3.10/site-packages/lab2
+[5.720s] copying /CPE416/ros_ws/src/lab2/build/lab2/build/lib/lab2/draw_square.py -> /CPE416/ros_ws/src/lab2/install/lab2/lib/python3.10/site-packages/lab2
+[5.788s] copying /CPE416/ros_ws/src/lab2/build/lab2/build/lib/lab2/__init__.py -> /CPE416/ros_ws/src/lab2/install/lab2/lib/python3.10/site-packages/lab2
+[5.896s] byte-compiling /CPE416/ros_ws/src/lab2/install/lab2/lib/python3.10/site-packages/lab2/draw_square.py to draw_square.cpython-310.pyc
+[6.055s] byte-compiling /CPE416/ros_ws/src/lab2/install/lab2/lib/python3.10/site-packages/lab2/__init__.py to __init__.cpython-310.pyc
+[6.193s] running install_data
+[6.218s] creating /CPE416/ros_ws/src/lab2/install/lab2/share/ament_index
+[6.226s] creating /CPE416/ros_ws/src/lab2/install/lab2/share/ament_index/resource_index
+[6.236s] creating /CPE416/ros_ws/src/lab2/install/lab2/share/ament_index/resource_index/packages
+[6.268s] copying resource/lab2 -> /CPE416/ros_ws/src/lab2/install/lab2/share/ament_index/resource_index/packages
+[6.356s] copying package.xml -> /CPE416/ros_ws/src/lab2/install/lab2/share/lab2
+[6.442s] copying launch/draw_square_launch.py -> /CPE416/ros_ws/src/lab2/install/lab2/share/lab2
+[6.484s] running install_egg_info
+[6.554s] Copying build/lab2/lab2.egg-info to /CPE416/ros_ws/src/lab2/install/lab2/lib/python3.10/site-packages/lab2-0.0.0-py3.10.egg-info
+[7.383s] running install_scripts
+[7.573s] Installing draw_square script to /CPE416/ros_ws/src/lab2/install/lab2/lib/lab2
+[7.606s] writing list of installed files to '/CPE416/ros_ws/src/lab2/build/lab2/install.log'
+[7.672s] Invoked command in '/CPE416/ros_ws/src/lab2' returned '0': PYTHONPATH=/CPE416/ros_ws/src/lab2/build/lab2/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/CPE416/ros_ws/src/lab2/install/lab2/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/lab2 build --build-base /CPE416/ros_ws/src/lab2/build/lab2/build install --record /CPE416/ros_ws/src/lab2/build/lab2/install.log --single-version-externally-managed install_data

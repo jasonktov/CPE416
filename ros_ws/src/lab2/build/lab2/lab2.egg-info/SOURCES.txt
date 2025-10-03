@@ -1,0 +1,17 @@
+package.xml
+setup.cfg
+setup.py
+build/lab2/lab2.egg-info/PKG-INFO
+build/lab2/lab2.egg-info/SOURCES.txt
+build/lab2/lab2.egg-info/dependency_links.txt
+build/lab2/lab2.egg-info/entry_points.txt
+build/lab2/lab2.egg-info/requires.txt
+build/lab2/lab2.egg-info/top_level.txt
+build/lab2/lab2.egg-info/zip-safe
+lab2/__init__.py
+lab2/draw_square.py
+launch/draw_square_launch.py
+resource/lab2
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py

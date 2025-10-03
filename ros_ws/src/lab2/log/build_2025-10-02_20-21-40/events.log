@@ -1,0 +1,129 @@
+[0.000000] (-) TimerEvent: {}
+[0.000879] (lab2) JobQueued: {'identifier': 'lab2', 'dependencies': OrderedDict()}
+[0.001569] (lab2) JobStarted: {'identifier': 'lab2'}
+[0.094638] (-) TimerEvent: {}
+[0.195438] (-) TimerEvent: {}
+[0.296547] (-) TimerEvent: {}
+[0.397828] (-) TimerEvent: {}
+[0.498802] (-) TimerEvent: {}
+[0.600923] (-) TimerEvent: {}
+[0.701961] (-) TimerEvent: {}
+[0.803033] (-) TimerEvent: {}
+[0.903895] (-) TimerEvent: {}
+[1.004974] (-) TimerEvent: {}
+[1.107215] (-) TimerEvent: {}
+[1.208130] (-) TimerEvent: {}
+[1.308960] (-) TimerEvent: {}
+[1.409775] (-) TimerEvent: {}
+[1.510675] (-) TimerEvent: {}
+[1.612115] (-) TimerEvent: {}
+[1.713941] (-) TimerEvent: {}
+[1.815370] (-) TimerEvent: {}
+[1.916851] (-) TimerEvent: {}
+[2.018897] (-) TimerEvent: {}
+[2.120409] (-) TimerEvent: {}
+[2.221857] (-) TimerEvent: {}
+[2.323088] (-) TimerEvent: {}
+[2.424309] (-) TimerEvent: {}
+[2.525739] (-) TimerEvent: {}
+[2.627026] (-) TimerEvent: {}
+[2.728117] (-) TimerEvent: {}
+[2.829133] (-) TimerEvent: {}
+[2.929923] (-) TimerEvent: {}
+[3.031122] (-) TimerEvent: {}
+[3.132178] (-) TimerEvent: {}
+[3.233146] (-) TimerEvent: {}
+[3.333980] (-) TimerEvent: {}
+[3.434916] (-) TimerEvent: {}
+[3.536029] (-) TimerEvent: {}
+[3.636819] (-) TimerEvent: {}
+[3.737705] (-) TimerEvent: {}
+[3.838974] (-) TimerEvent: {}
+[3.940119] (-) TimerEvent: {}
+[4.041275] (-) TimerEvent: {}
+[4.072184] (lab2) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', 'build/lab2', 'build', '--build-base', '/CPE416/ros_ws/src/lab2/build/lab2/build', 'install', '--record', '/CPE416/ros_ws/src/lab2/build/lab2/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/CPE416/ros_ws/src/lab2', 'env': {'HOSTNAME': '5394a4a448e1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/root', 'OLDPWD': '/CPE416/ros_ws/src', 'ROS_PYTHON_VERSION': '3', 'COLCON_PREFIX_PATH': '/CPE416/ros_ws/src/lab2/install', 'ROS_DISTRO': 'humble', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': 'novnc:0.0', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/CPE416/ros_ws/src/lab2/install/lab2:/opt/ros/humble', 'PWD': '/CPE416/ros_ws/src/lab2/build/lab2', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/CPE416/ros_ws/src/lab2/build/lab2/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/CPE416/ros_ws/src/lab2/install/lab2/lib/python3.10/site-packages:/CPE416/ros_ws/src/lab2/install/lab2/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1'}, 'shell': False}
+[4.141476] (-) TimerEvent: {}
+[4.242832] (-) TimerEvent: {}
+[4.344104] (-) TimerEvent: {}
+[4.445135] (-) TimerEvent: {}
+[4.546198] (-) TimerEvent: {}
+[4.647471] (-) TimerEvent: {}
+[4.750120] (-) TimerEvent: {}
+[4.851414] (-) TimerEvent: {}
+[4.952708] (-) TimerEvent: {}
+[5.053685] (-) TimerEvent: {}
+[5.154762] (-) TimerEvent: {}
+[5.255732] (-) TimerEvent: {}
+[5.356981] (-) TimerEvent: {}
+[5.457971] (-) TimerEvent: {}
+[5.559092] (-) TimerEvent: {}
+[5.660636] (-) TimerEvent: {}
+[5.761695] (-) TimerEvent: {}
+[5.863032] (-) TimerEvent: {}
+[5.964188] (-) TimerEvent: {}
+[6.043843] (lab2) StdoutLine: {'line': b'running egg_info\n'}
+[6.055114] (lab2) StdoutLine: {'line': b'writing build/lab2/lab2.egg-info/PKG-INFO\n'}
+[6.064364] (-) TimerEvent: {}
+[6.073660] (lab2) StdoutLine: {'line': b'writing dependency_links to build/lab2/lab2.egg-info/dependency_links.txt\n'}
+[6.089107] (lab2) StdoutLine: {'line': b'writing entry points to build/lab2/lab2.egg-info/entry_points.txt\n'}
+[6.101218] (lab2) StdoutLine: {'line': b'writing requirements to build/lab2/lab2.egg-info/requires.txt\n'}
+[6.108133] (lab2) StdoutLine: {'line': b'writing top-level names to build/lab2/lab2.egg-info/top_level.txt\n'}
+[6.164527] (-) TimerEvent: {}
+[6.194396] (lab2) StdoutLine: {'line': b"reading manifest file 'build/lab2/lab2.egg-info/SOURCES.txt'\n"}
+[6.264791] (-) TimerEvent: {}
+[6.365731] (-) TimerEvent: {}
+[6.388932] (lab2) StdoutLine: {'line': b"writing manifest file 'build/lab2/lab2.egg-info/SOURCES.txt'\n"}
+[6.396835] (lab2) StdoutLine: {'line': b'running build\n'}
+[6.398622] (lab2) StdoutLine: {'line': b'running build_py\n'}
+[6.438299] (lab2) StdoutLine: {'line': b'copying lab2/draw_square.py -> /CPE416/ros_ws/src/lab2/build/lab2/build/lib/lab2\n'}
+[6.465901] (-) TimerEvent: {}
+[6.543898] (lab2) StdoutLine: {'line': b'running install\n'}
+[6.545638] (lab2) StdoutLine: {'line': b'running install_lib\n'}
+[6.566175] (-) TimerEvent: {}
+[6.667466] (-) TimerEvent: {}
+[6.673382] (lab2) StdoutLine: {'line': b'copying /CPE416/ros_ws/src/lab2/build/lab2/build/lib/lab2/draw_square.py -> /CPE416/ros_ws/src/lab2/install/lab2/lib/python3.10/site-packages/lab2\n'}
+[6.767750] (-) TimerEvent: {}
+[6.869051] (-) TimerEvent: {}
+[6.910256] (lab2) StdoutLine: {'line': b'byte-compiling /CPE416/ros_ws/src/lab2/install/lab2/lib/python3.10/site-packages/lab2/draw_square.py to draw_square.cpython-310.pyc\n'}
+[6.969212] (-) TimerEvent: {}
+[7.070271] (-) TimerEvent: {}
+[7.172325] (-) TimerEvent: {}
+[7.213707] (lab2) StdoutLine: {'line': b'running install_data\n'}
+[7.272555] (-) TimerEvent: {}
+[7.374716] (-) TimerEvent: {}
+[7.405538] (lab2) StdoutLine: {'line': b'running install_egg_info\n'}
+[7.455650] (lab2) StdoutLine: {'line': b"removing '/CPE416/ros_ws/src/lab2/install/lab2/lib/python3.10/site-packages/lab2-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[7.474915] (-) TimerEvent: {}
+[7.577232] (-) TimerEvent: {}
+[7.679113] (-) TimerEvent: {}
+[7.689988] (lab2) StdoutLine: {'line': b'Copying build/lab2/lab2.egg-info to /CPE416/ros_ws/src/lab2/install/lab2/lib/python3.10/site-packages/lab2-0.0.0-py3.10.egg-info\n'}
+[7.779256] (-) TimerEvent: {}
+[7.922135] (-) TimerEvent: {}
+[8.046295] (-) TimerEvent: {}
+[8.152132] (-) TimerEvent: {}
+[8.253206] (-) TimerEvent: {}
+[8.354118] (-) TimerEvent: {}
+[8.457785] (-) TimerEvent: {}
+[8.559035] (-) TimerEvent: {}
+[8.663866] (-) TimerEvent: {}
+[8.766222] (-) TimerEvent: {}
+[8.867438] (-) TimerEvent: {}
+[8.930289] (lab2) StdoutLine: {'line': b'running install_scripts\n'}
+[8.967738] (-) TimerEvent: {}
+[9.069000] (-) TimerEvent: {}
+[9.163154] (lab2) StdoutLine: {'line': b'Installing draw_square script to /CPE416/ros_ws/src/lab2/install/lab2/lib/lab2\n'}
+[9.169151] (-) TimerEvent: {}
+[9.213525] (lab2) StdoutLine: {'line': b"writing list of installed files to '/CPE416/ros_ws/src/lab2/build/lab2/install.log'\n"}
+[9.263059] (lab2) CommandEnded: {'returncode': 0}
+[9.284746] (-) TimerEvent: {}
+[9.385959] (-) TimerEvent: {}
+[9.487182] (-) TimerEvent: {}
+[9.588400] (-) TimerEvent: {}
+[9.689380] (-) TimerEvent: {}
+[9.790304] (-) TimerEvent: {}
+[9.891490] (-) TimerEvent: {}
+[9.993128] (-) TimerEvent: {}
+[10.094254] (-) TimerEvent: {}
+[10.195179] (-) TimerEvent: {}
+[10.224731] (lab2) JobEnded: {'identifier': 'lab2', 'rc': 0}
+[10.262501] (-) EventReactorShutdown: {}

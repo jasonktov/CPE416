@@ -1,0 +1,3 @@
+[console_scripts]
+draw_square = lab2.draw_square:main
+

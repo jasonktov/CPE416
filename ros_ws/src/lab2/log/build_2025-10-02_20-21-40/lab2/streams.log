@@ -1,0 +1,24 @@
+[4.093s] Invoking command in '/CPE416/ros_ws/src/lab2': PYTHONPATH=/CPE416/ros_ws/src/lab2/build/lab2/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/CPE416/ros_ws/src/lab2/install/lab2/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/lab2 build --build-base /CPE416/ros_ws/src/lab2/build/lab2/build install --record /CPE416/ros_ws/src/lab2/build/lab2/install.log --single-version-externally-managed install_data
+[6.043s] running egg_info
+[6.054s] writing build/lab2/lab2.egg-info/PKG-INFO
+[6.072s] writing dependency_links to build/lab2/lab2.egg-info/dependency_links.txt
+[6.088s] writing entry points to build/lab2/lab2.egg-info/entry_points.txt
+[6.100s] writing requirements to build/lab2/lab2.egg-info/requires.txt
+[6.107s] writing top-level names to build/lab2/lab2.egg-info/top_level.txt
+[6.194s] reading manifest file 'build/lab2/lab2.egg-info/SOURCES.txt'
+[6.388s] writing manifest file 'build/lab2/lab2.egg-info/SOURCES.txt'
+[6.396s] running build
+[6.397s] running build_py
+[6.437s] copying lab2/draw_square.py -> /CPE416/ros_ws/src/lab2/build/lab2/build/lib/lab2
+[6.543s] running install
+[6.545s] running install_lib
+[6.674s] copying /CPE416/ros_ws/src/lab2/build/lab2/build/lib/lab2/draw_square.py -> /CPE416/ros_ws/src/lab2/install/lab2/lib/python3.10/site-packages/lab2
+[6.910s] byte-compiling /CPE416/ros_ws/src/lab2/install/lab2/lib/python3.10/site-packages/lab2/draw_square.py to draw_square.cpython-310.pyc
+[7.215s] running install_data
+[7.406s] running install_egg_info
+[7.456s] removing '/CPE416/ros_ws/src/lab2/install/lab2/lib/python3.10/site-packages/lab2-0.0.0-py3.10.egg-info' (and everything under it)
+[7.689s] Copying build/lab2/lab2.egg-info to /CPE416/ros_ws/src/lab2/install/lab2/lib/python3.10/site-packages/lab2-0.0.0-py3.10.egg-info
+[8.929s] running install_scripts
+[9.163s] Installing draw_square script to /CPE416/ros_ws/src/lab2/install/lab2/lib/lab2
+[9.213s] writing list of installed files to '/CPE416/ros_ws/src/lab2/build/lab2/install.log'
+[9.281s] Invoked command in '/CPE416/ros_ws/src/lab2' returned '0': PYTHONPATH=/CPE416/ros_ws/src/lab2/build/lab2/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/CPE416/ros_ws/src/lab2/install/lab2/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/lab2 build --build-base /CPE416/ros_ws/src/lab2/build/lab2/build install --record /CPE416/ros_ws/src/lab2/build/lab2/install.log --single-version-externally-managed install_data

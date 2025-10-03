@@ -1,0 +1,126 @@
+[0.000000] (-) TimerEvent: {}
+[0.000684] (lab1) JobQueued: {'identifier': 'lab1', 'dependencies': OrderedDict()}
+[0.002357] (lab1) JobStarted: {'identifier': 'lab1'}
+[0.097023] (-) TimerEvent: {}
+[0.197794] (-) TimerEvent: {}
+[0.302658] (-) TimerEvent: {}
+[0.403518] (-) TimerEvent: {}
+[0.504435] (-) TimerEvent: {}
+[0.605192] (-) TimerEvent: {}
+[0.706030] (-) TimerEvent: {}
+[0.807706] (-) TimerEvent: {}
+[0.908509] (-) TimerEvent: {}
+[1.009618] (-) TimerEvent: {}
+[1.110627] (-) TimerEvent: {}
+[1.211292] (-) TimerEvent: {}
+[1.312158] (-) TimerEvent: {}
+[1.412977] (-) TimerEvent: {}
+[1.513864] (-) TimerEvent: {}
+[1.614840] (-) TimerEvent: {}
+[1.716203] (-) TimerEvent: {}
+[1.817096] (-) TimerEvent: {}
+[1.918170] (-) TimerEvent: {}
+[2.019844] (-) TimerEvent: {}
+[2.120866] (-) TimerEvent: {}
+[2.221888] (-) TimerEvent: {}
+[2.322803] (-) TimerEvent: {}
+[2.423758] (-) TimerEvent: {}
+[2.524828] (-) TimerEvent: {}
+[2.625962] (-) TimerEvent: {}
+[2.727029] (-) TimerEvent: {}
+[2.828289] (-) TimerEvent: {}
+[2.930179] (-) TimerEvent: {}
+[3.031479] (-) TimerEvent: {}
+[3.132487] (-) TimerEvent: {}
+[3.235172] (-) TimerEvent: {}
+[3.336127] (-) TimerEvent: {}
+[3.377667] (lab1) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/lab1', 'build', '--build-base', '/CPE416/ros_ws/build/lab1/build', 'install', '--record', '/CPE416/ros_ws/build/lab1/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/CPE416/ros_ws/src/lab1', 'env': {'HOSTNAME': '5394a4a448e1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/root', 'OLDPWD': '/CPE416/ros_ws/src', 'ROS_PYTHON_VERSION': '3', 'COLCON_PREFIX_PATH': '/CPE416/ros_ws/install', 'ROS_DISTRO': 'humble', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': 'novnc:0.0', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/CPE416/ros_ws/install/lab1:/opt/ros/humble', 'PWD': '/CPE416/ros_ws/build/lab1', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/CPE416/ros_ws/build/lab1/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/CPE416/ros_ws/install/lab1/lib/python3.10/site-packages:/CPE416/ros_ws/install/lab1/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1'}, 'shell': False}
+[3.436417] (-) TimerEvent: {}
+[3.537971] (-) TimerEvent: {}
+[3.639394] (-) TimerEvent: {}
+[3.740510] (-) TimerEvent: {}
+[3.841438] (-) TimerEvent: {}
+[3.943472] (-) TimerEvent: {}
+[4.249176] (-) TimerEvent: {}
+[4.352001] (-) TimerEvent: {}
+[4.455781] (-) TimerEvent: {}
+[4.556912] (-) TimerEvent: {}
+[4.657976] (-) TimerEvent: {}
+[4.759076] (-) TimerEvent: {}
+[4.860223] (-) TimerEvent: {}
+[4.967163] (-) TimerEvent: {}
+[5.068388] (-) TimerEvent: {}
+[5.213649] (-) TimerEvent: {}
+[5.318402] (-) TimerEvent: {}
+[5.419418] (-) TimerEvent: {}
+[5.521022] (-) TimerEvent: {}
+[5.638404] (-) TimerEvent: {}
+[5.739549] (-) TimerEvent: {}
+[5.840626] (-) TimerEvent: {}
+[5.941571] (-) TimerEvent: {}
+[6.042550] (-) TimerEvent: {}
+[6.146952] (-) TimerEvent: {}
+[6.248420] (-) TimerEvent: {}
+[6.299682] (lab1) StdoutLine: {'line': b'running egg_info\n'}
+[6.311038] (lab1) StdoutLine: {'line': b'writing ../../build/lab1/lab1.egg-info/PKG-INFO\n'}
+[6.330954] (lab1) StdoutLine: {'line': b'writing dependency_links to ../../build/lab1/lab1.egg-info/dependency_links.txt\n'}
+[6.350302] (-) TimerEvent: {}
+[6.350847] (lab1) StdoutLine: {'line': b'writing entry points to ../../build/lab1/lab1.egg-info/entry_points.txt\n'}
+[6.362062] (lab1) StdoutLine: {'line': b'writing requirements to ../../build/lab1/lab1.egg-info/requires.txt\n'}
+[6.372107] (lab1) StdoutLine: {'line': b'writing top-level names to ../../build/lab1/lab1.egg-info/top_level.txt\n'}
+[6.450536] (-) TimerEvent: {}
+[6.494699] (lab1) StdoutLine: {'line': b"reading manifest file '../../build/lab1/lab1.egg-info/SOURCES.txt'\n"}
+[6.550769] (-) TimerEvent: {}
+[6.652104] (-) TimerEvent: {}
+[6.753382] (-) TimerEvent: {}
+[6.782678] (lab1) StdoutLine: {'line': b"writing manifest file '../../build/lab1/lab1.egg-info/SOURCES.txt'\n"}
+[6.798896] (lab1) StdoutLine: {'line': b'running build\n'}
+[6.802006] (lab1) StdoutLine: {'line': b'running build_py\n'}
+[6.853624] (-) TimerEvent: {}
+[6.862625] (lab1) StdoutLine: {'line': b'copying lab1/listener.py -> /CPE416/ros_ws/build/lab1/build/lib/lab1\n'}
+[6.953935] (-) TimerEvent: {}
+[6.996532] (lab1) StdoutLine: {'line': b'copying lab1/talker.py -> /CPE416/ros_ws/build/lab1/build/lib/lab1\n'}
+[7.054208] (-) TimerEvent: {}
+[7.145732] (lab1) StdoutLine: {'line': b'running install\n'}
+[7.147657] (lab1) StdoutLine: {'line': b'running install_lib\n'}
+[7.154337] (-) TimerEvent: {}
+[7.255185] (-) TimerEvent: {}
+[7.261984] (lab1) StdoutLine: {'line': b'copying /CPE416/ros_ws/build/lab1/build/lib/lab1/listener.py -> /CPE416/ros_ws/install/lab1/lib/python3.10/site-packages/lab1\n'}
+[7.332941] (lab1) StdoutLine: {'line': b'copying /CPE416/ros_ws/build/lab1/build/lib/lab1/talker.py -> /CPE416/ros_ws/install/lab1/lib/python3.10/site-packages/lab1\n'}
+[7.355390] (-) TimerEvent: {}
+[7.451053] (lab1) StdoutLine: {'line': b'byte-compiling /CPE416/ros_ws/install/lab1/lib/python3.10/site-packages/lab1/listener.py to listener.cpython-310.pyc\n'}
+[7.455503] (-) TimerEvent: {}
+[7.556299] (-) TimerEvent: {}
+[7.569088] (lab1) StdoutLine: {'line': b'byte-compiling /CPE416/ros_ws/install/lab1/lib/python3.10/site-packages/lab1/talker.py to talker.cpython-310.pyc\n'}
+[7.656481] (-) TimerEvent: {}
+[7.657424] (lab1) StdoutLine: {'line': b'running install_data\n'}
+[7.697656] (lab1) StdoutLine: {'line': b'running install_egg_info\n'}
+[7.715307] (lab1) StdoutLine: {'line': b"removing '/CPE416/ros_ws/install/lab1/lib/python3.10/site-packages/lab1-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[7.756673] (-) TimerEvent: {}
+[7.857793] (-) TimerEvent: {}
+[7.905636] (lab1) StdoutLine: {'line': b'Copying ../../build/lab1/lab1.egg-info to /CPE416/ros_ws/install/lab1/lib/python3.10/site-packages/lab1-0.0.0-py3.10.egg-info\n'}
+[7.958068] (-) TimerEvent: {}
+[8.059468] (-) TimerEvent: {}
+[8.160462] (-) TimerEvent: {}
+[8.261452] (-) TimerEvent: {}
+[8.362576] (-) TimerEvent: {}
+[8.463986] (-) TimerEvent: {}
+[8.565106] (-) TimerEvent: {}
+[8.668895] (-) TimerEvent: {}
+[8.775339] (-) TimerEvent: {}
+[8.873468] (lab1) StdoutLine: {'line': b'running install_scripts\n'}
+[8.876305] (-) TimerEvent: {}
+[8.977110] (-) TimerEvent: {}
+[9.066229] (lab1) StdoutLine: {'line': b'Installing squarer script to /CPE416/ros_ws/install/lab1/lib/lab1\n'}
+[9.077246] (-) TimerEvent: {}
+[9.097413] (lab1) StdoutLine: {'line': b'Installing talker script to /CPE416/ros_ws/install/lab1/lib/lab1\n'}
+[9.127376] (lab1) StdoutLine: {'line': b"writing list of installed files to '/CPE416/ros_ws/build/lab1/install.log'\n"}
+[9.164714] (lab1) CommandEnded: {'returncode': 0}
+[9.184196] (-) TimerEvent: {}
+[9.285145] (-) TimerEvent: {}
+[9.386026] (-) TimerEvent: {}
+[9.486763] (-) TimerEvent: {}
+[9.587504] (-) TimerEvent: {}
+[9.688540] (-) TimerEvent: {}
+[9.690119] (lab1) JobEnded: {'identifier': 'lab1', 'rc': 0}
+[9.707322] (-) EventReactorShutdown: {}

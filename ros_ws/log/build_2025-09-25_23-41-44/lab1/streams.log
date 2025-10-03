@@ -1,0 +1,33 @@
+[2.956s] Invoking command in '/CPE416/ros_ws/src/lab1': PYTHONPATH=/CPE416/ros_ws/build/lab1/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/CPE416/ros_ws/install/lab1/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/lab1 build --build-base /CPE416/ros_ws/build/lab1/build install --record /CPE416/ros_ws/build/lab1/install.log --single-version-externally-managed install_data
+[4.574s] running egg_info
+[4.583s] creating ../../build/lab1/lab1.egg-info
+[4.592s] writing ../../build/lab1/lab1.egg-info/PKG-INFO
+[4.614s] writing dependency_links to ../../build/lab1/lab1.egg-info/dependency_links.txt
+[4.633s] writing entry points to ../../build/lab1/lab1.egg-info/entry_points.txt
+[4.642s] writing requirements to ../../build/lab1/lab1.egg-info/requires.txt
+[4.652s] writing top-level names to ../../build/lab1/lab1.egg-info/top_level.txt
+[4.665s] writing manifest file '../../build/lab1/lab1.egg-info/SOURCES.txt'
+[4.738s] reading manifest file '../../build/lab1/lab1.egg-info/SOURCES.txt'
+[4.927s] writing manifest file '../../build/lab1/lab1.egg-info/SOURCES.txt'
+[4.936s] running build
+[4.938s] running build_py
+[4.952s] creating /CPE416/ros_ws/build/lab1/build
+[4.955s] creating /CPE416/ros_ws/build/lab1/build/lib
+[4.961s] creating /CPE416/ros_ws/build/lab1/build/lib/lab1
+[4.982s] copying lab1/__init__.py -> /CPE416/ros_ws/build/lab1/build/lib/lab1
+[5.011s] running install
+[5.013s] running install_lib
+[5.070s] creating /CPE416/ros_ws/install/lab1/lib/python3.10/site-packages/lab1
+[5.104s] copying /CPE416/ros_ws/build/lab1/build/lib/lab1/__init__.py -> /CPE416/ros_ws/install/lab1/lib/python3.10/site-packages/lab1
+[5.171s] byte-compiling /CPE416/ros_ws/install/lab1/lib/python3.10/site-packages/lab1/__init__.py to __init__.cpython-310.pyc
+[5.251s] running install_data
+[5.262s] creating /CPE416/ros_ws/install/lab1/share/ament_index
+[5.266s] creating /CPE416/ros_ws/install/lab1/share/ament_index/resource_index
+[5.272s] creating /CPE416/ros_ws/install/lab1/share/ament_index/resource_index/packages
+[5.297s] copying resource/lab1 -> /CPE416/ros_ws/install/lab1/share/ament_index/resource_index/packages
+[5.370s] copying package.xml -> /CPE416/ros_ws/install/lab1/share/lab1
+[5.407s] running install_egg_info
+[5.454s] Copying ../../build/lab1/lab1.egg-info to /CPE416/ros_ws/install/lab1/lib/python3.10/site-packages/lab1-0.0.0-py3.10.egg-info
+[6.113s] running install_scripts
+[6.332s] writing list of installed files to '/CPE416/ros_ws/build/lab1/install.log'
+[6.386s] Invoked command in '/CPE416/ros_ws/src/lab1' returned '0': PYTHONPATH=/CPE416/ros_ws/build/lab1/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/CPE416/ros_ws/install/lab1/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/lab1 build --build-base /CPE416/ros_ws/build/lab1/build install --record /CPE416/ros_ws/build/lab1/install.log --single-version-externally-managed install_data
