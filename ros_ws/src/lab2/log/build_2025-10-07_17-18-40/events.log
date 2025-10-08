@@ -1,0 +1,55 @@
+[0.000000] (-) TimerEvent: {}
+[0.000611] (lab2) JobQueued: {'identifier': 'lab2', 'dependencies': OrderedDict()}
+[0.001102] (lab2) JobStarted: {'identifier': 'lab2'}
+[0.099483] (-) TimerEvent: {}
+[0.200082] (-) TimerEvent: {}
+[0.300667] (-) TimerEvent: {}
+[0.401248] (-) TimerEvent: {}
+[0.501836] (-) TimerEvent: {}
+[0.602419] (-) TimerEvent: {}
+[0.702989] (-) TimerEvent: {}
+[0.803602] (-) TimerEvent: {}
+[0.904215] (-) TimerEvent: {}
+[1.004813] (-) TimerEvent: {}
+[1.105394] (-) TimerEvent: {}
+[1.206002] (-) TimerEvent: {}
+[1.306646] (-) TimerEvent: {}
+[1.324014] (lab2) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', 'build/lab2', 'build', '--build-base', '/home/calpoly/Desktop/CPE416/ros_ws/src/lab2/build/lab2/build', 'install', '--record', '/home/calpoly/Desktop/CPE416/ros_ws/src/lab2/build/lab2/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/calpoly/Desktop/CPE416/ros_ws/src/lab2', 'env': {'VNCDESKTOP': 'ubuntu:1 (calpoly)', 'USER': 'calpoly', 'XDG_SESSION_TYPE': 'x11', 'RPROMPT': '$GITSTATUS_PROMPT  %(?.%F{10}✓%f.%F{9}X%f)', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda/lib64', 'HOME': '/home/calpoly', 'OLDPWD': '/home/calpoly/Desktop/CPE416', 'ZINIT_HOME': '/home/calpoly/.local/share/zinit/zinit.git', 'ZSH': '/home/calpoly/.oh-my-zsh', 'ROS_PYTHON_VERSION': '3', 'PS1': '%B%F{10}%n%f%b:%F{12}%~%f$', 'AUTO_NOTIFY_THRESHOLD': '20', 'DBUS_SESSION_BUS_ADDRESS': 'unix:abstract=/tmp/dbus-oMU09NkmwS,guid=85786b616b230c18cfd69e0d68dc6cbb', 'SYSTEMD_EXEC_PID': '873', 'COLORTERM': 'truecolor', 'DOTFILES': '/home/calpoly/Documents/GitHub/Projects/dotfiles', 'ZPFX': '/home/calpoly/.local/share/zinit/polaris', 'ROS_DISTRO': 'humble', 'COLCON_PREFIX_PATH': '/home/calpoly/Desktop/CPE 416/CPE416/ros_ws/src/lab2/install', 'LOGNAME': 'calpoly', '_': '/home/calpoly/.local/bin/colcon', 'XDG_SESSION_CLASS': 'user', 'AUTO_NOTIFY_BODY': 'It completed in %elapsed seconds with exit code %exit_code', 'ROS_VERSION': '2', 'USERNAME': 'calpoly', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'ZSH_CACHE_DIR': '/home/calpoly/.cache/zinit', 'PMSPEC': '0uUpiPsf', 'HISTDUP': 'erase', 'PATH': '/opt/ros/humble/bin:/home/calpoly/.cargo/bin:/usr/local/opt/riscv-gnu-toolchain/bin:/opt/riscv/bin:/usr/local/cuda/bin:/usr/local/cuda/bin:/home/calpoly/Library/pnpm:/home/calpoly/.local/bin:/home/calpoly/.local/share/zinit/polaris/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin', 'SESSION_MANAGER': 'local/ubuntu:@/tmp/.ICE-unix/1402,unix/ubuntu:/tmp/.ICE-unix/1402', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/45fd267d_abd9_4fe7_9d0b_10c0910d1a8e', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':1', 'AUTO_NOTIFY_TITLE': '%command finished executing', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'GNOME', 'HISTSIZE': '10000000', 'XMODIFIERS': '@im=ibus', 'GNOME_TERMINAL_SERVICE': ':1.73', 'YSU_VERSION': '1.9.0', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/calpoly/Desktop/CPE 416/CPE416/ros_ws/src/lab2/install/lab2:/opt/ros/humble', 'SHELL': '/bin/zsh', 'AUTO_NOTIFY_EXPIRE_TIME': '8000', 'AUTO_NOTIFY_VERSION': '0.10.2', 'QT_IM_MODULE': 'ibus', 'SAVEHIST': '10000000', 'PWD': '/home/calpoly/Desktop/CPE416/ros_ws/src/lab2/build/lab2', 'LC_ALL': 'en_US.UTF-8', 'ZDOTDIR': '/home/calpoly', 'DYLD_LIBRARY_PATH': '/usr/local/cuda/lib:', 'PYTHONPATH': '/home/calpoly/Desktop/CPE416/ros_ws/src/lab2/build/lab2/prefix_override:/home/calpoly/.local/lib/python3.10/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/calpoly/Desktop/CPE416/ros_ws/src/lab2/install/lab2/lib/python3.10/site-packages:/home/calpoly/Desktop/CPE 416/CPE416/ros_ws/src/lab2/install/lab2/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'HISTFILE': '/home/calpoly/.zsh_history', 'COLCON': '1', 'VTE_VERSION': '6800', 'MANPATH': '/usr/local/man:'}, 'shell': False}
+[1.406797] (-) TimerEvent: {}
+[1.507413] (-) TimerEvent: {}
+[1.608028] (-) TimerEvent: {}
+[1.708611] (-) TimerEvent: {}
+[1.809038] (lab2) StdoutLine: {'line': b'running egg_info\n'}
+[1.809596] (-) TimerEvent: {}
+[1.810326] (lab2) StdoutLine: {'line': b'writing build/lab2/lab2.egg-info/PKG-INFO\n'}
+[1.810899] (lab2) StdoutLine: {'line': b'writing dependency_links to build/lab2/lab2.egg-info/dependency_links.txt\n'}
+[1.811273] (lab2) StdoutLine: {'line': b'writing entry points to build/lab2/lab2.egg-info/entry_points.txt\n'}
+[1.811536] (lab2) StdoutLine: {'line': b'writing requirements to build/lab2/lab2.egg-info/requires.txt\n'}
+[1.811733] (lab2) StdoutLine: {'line': b'writing top-level names to build/lab2/lab2.egg-info/top_level.txt\n'}
+[1.815226] (lab2) StdoutLine: {'line': b"reading manifest file 'build/lab2/lab2.egg-info/SOURCES.txt'\n"}
+[1.816825] (lab2) StdoutLine: {'line': b"writing manifest file 'build/lab2/lab2.egg-info/SOURCES.txt'\n"}
+[1.817039] (lab2) StdoutLine: {'line': b'running build\n'}
+[1.817235] (lab2) StdoutLine: {'line': b'running build_py\n'}
+[1.817558] (lab2) StdoutLine: {'line': b'copying lab2/draw_spiral.py -> /home/calpoly/Desktop/CPE416/ros_ws/src/lab2/build/lab2/build/lib/lab2\n'}
+[1.817965] (lab2) StdoutLine: {'line': b'copying lab2/open_loop.py -> /home/calpoly/Desktop/CPE416/ros_ws/src/lab2/build/lab2/build/lib/lab2\n'}
+[1.818389] (lab2) StdoutLine: {'line': b'running install\n'}
+[1.819023] (lab2) StdoutLine: {'line': b'running install_lib\n'}
+[1.820837] (lab2) StdoutLine: {'line': b'copying /home/calpoly/Desktop/CPE416/ros_ws/src/lab2/build/lab2/build/lib/lab2/draw_spiral.py -> /home/calpoly/Desktop/CPE416/ros_ws/src/lab2/install/lab2/lib/python3.10/site-packages/lab2\n'}
+[1.821169] (lab2) StdoutLine: {'line': b'copying /home/calpoly/Desktop/CPE416/ros_ws/src/lab2/build/lab2/build/lib/lab2/open_loop.py -> /home/calpoly/Desktop/CPE416/ros_ws/src/lab2/install/lab2/lib/python3.10/site-packages/lab2\n'}
+[1.822250] (lab2) StdoutLine: {'line': b'byte-compiling /home/calpoly/Desktop/CPE416/ros_ws/src/lab2/install/lab2/lib/python3.10/site-packages/lab2/draw_spiral.py to draw_spiral.cpython-310.pyc\n'}
+[1.823304] (lab2) StdoutLine: {'line': b'byte-compiling /home/calpoly/Desktop/CPE416/ros_ws/src/lab2/install/lab2/lib/python3.10/site-packages/lab2/open_loop.py to open_loop.cpython-310.pyc\n'}
+[1.824089] (lab2) StdoutLine: {'line': b'running install_data\n'}
+[1.824444] (lab2) StdoutLine: {'line': b'copying launch/draw_spiral_launch.py -> /home/calpoly/Desktop/CPE416/ros_ws/src/lab2/install/lab2/share/lab2\n'}
+[1.824720] (lab2) StdoutLine: {'line': b'copying launch/open_loop_launch.py -> /home/calpoly/Desktop/CPE416/ros_ws/src/lab2/install/lab2/share/lab2\n'}
+[1.824956] (lab2) StdoutLine: {'line': b'running install_egg_info\n'}
+[1.828616] (lab2) StdoutLine: {'line': b"removing '/home/calpoly/Desktop/CPE416/ros_ws/src/lab2/install/lab2/lib/python3.10/site-packages/lab2-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[1.829297] (lab2) StdoutLine: {'line': b'Copying build/lab2/lab2.egg-info to /home/calpoly/Desktop/CPE416/ros_ws/src/lab2/install/lab2/lib/python3.10/site-packages/lab2-0.0.0-py3.10.egg-info\n'}
+[1.831162] (lab2) StdoutLine: {'line': b'running install_scripts\n'}
+[1.874071] (lab2) StdoutLine: {'line': b'Installing draw_spiral script to /home/calpoly/Desktop/CPE416/ros_ws/src/lab2/install/lab2/lib/lab2\n'}
+[1.874524] (lab2) StdoutLine: {'line': b'Installing draw_square script to /home/calpoly/Desktop/CPE416/ros_ws/src/lab2/install/lab2/lib/lab2\n'}
+[1.874736] (lab2) StdoutLine: {'line': b'Installing open_loop script to /home/calpoly/Desktop/CPE416/ros_ws/src/lab2/install/lab2/lib/lab2\n'}
+[1.875470] (lab2) StdoutLine: {'line': b"writing list of installed files to '/home/calpoly/Desktop/CPE416/ros_ws/src/lab2/build/lab2/install.log'\n"}
+[1.909790] (-) TimerEvent: {}
+[1.941558] (lab2) CommandEnded: {'returncode': 0}
+[1.980822] (lab2) JobEnded: {'identifier': 'lab2', 'rc': 0}
+[1.983044] (-) EventReactorShutdown: {}
