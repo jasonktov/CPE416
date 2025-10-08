@@ -9,8 +9,12 @@ build/lab2/lab2.egg-info/requires.txt
 build/lab2/lab2.egg-info/top_level.txt
 build/lab2/lab2.egg-info/zip-safe
 lab2/__init__.py
+lab2/draw_spiral.py
 lab2/draw_square.py
+lab2/open_loop.py
+launch/draw_spiral_launch.py
 launch/draw_square_launch.py
+launch/open_loop_launch.py
 resource/lab2
 test/test_copyright.py
 test/test_flake8.py

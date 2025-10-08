@@ -1,3 +1,5 @@
 [console_scripts]
+draw_spiral = lab2.draw_spiral:main
 draw_square = lab2.draw_square:main
+open_loop = lab2.open_loop:main
 

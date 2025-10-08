@@ -21,6 +21,7 @@ class DrawSquare(Node):
         # 'ros2 node list'
         super().__init__('draw_spiral')
         
+        self.i = 1
         # Remember that the 'create_publisher' function takes in three arguments
         # Message Type | Topic Name | Queue Length
         # Fill in those values here
@@ -32,13 +33,17 @@ class DrawSquare(Node):
 
         self.msg = Twist()
         self.msg.linear.x = float('1.0')
-        self.msg.angulat.z = math.pi/2.1
+        self.msg.angular.z = math.pi/self.i
 
     # Callback for the events
     def timer_callback(self):
         self.get_logger().info('Robot is Spiraling!')
         # Publish the message
         self.publisher_.publish(self.msg)
+
+        self.msg.angular.z = math.pi/self.i
+
+        self.i = self.i + 0.1
 
 
 
