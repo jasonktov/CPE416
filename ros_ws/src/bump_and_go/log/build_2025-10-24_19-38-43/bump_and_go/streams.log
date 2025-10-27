@@ -1,0 +1,29 @@
+[7.968s] Invoking command in '/gobilda_sim/ros_ws/src/bump_and_go': PYTHONPATH=/gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base build/bump_and_go build --build-base /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/build install --record /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/install.log --single-version-externally-managed install_data
+[11.277s] running egg_info
+[11.286s] writing build/bump_and_go/bump_and_go.egg-info/PKG-INFO
+[11.312s] writing dependency_links to build/bump_and_go/bump_and_go.egg-info/dependency_links.txt
+[11.328s] writing entry points to build/bump_and_go/bump_and_go.egg-info/entry_points.txt
+[11.354s] writing requirements to build/bump_and_go/bump_and_go.egg-info/requires.txt
+[11.365s] writing top-level names to build/bump_and_go/bump_and_go.egg-info/top_level.txt
+[11.508s] reading manifest file 'build/bump_and_go/bump_and_go.egg-info/SOURCES.txt'
+[11.731s] writing manifest file 'build/bump_and_go/bump_and_go.egg-info/SOURCES.txt'
+[11.741s] running build
+[11.743s] running build_py
+[11.810s] copying bump_and_go/obstacle_detector.py -> /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/build/lib/bump_and_go
+[11.906s] copying bump_and_go/teleop_twist_keyboard.py -> /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/build/lib/bump_and_go
+[12.043s] running install
+[12.046s] running install_lib
+[12.283s] copying /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/build/lib/bump_and_go/obstacle_detector.py -> /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages/bump_and_go
+[12.419s] copying /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/build/lib/bump_and_go/teleop_twist_keyboard.py -> /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages/bump_and_go
+[12.625s] byte-compiling /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages/bump_and_go/obstacle_detector.py to obstacle_detector.cpython-310.pyc
+[12.669s] Sorry: IndentationError: expected an indented block after function definition on line 102 (obstacle_detector.py, line 105)
+[12.687s] byte-compiling /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages/bump_and_go/teleop_twist_keyboard.py to teleop_twist_keyboard.cpython-310.pyc
+[12.814s] running install_data
+[12.908s] copying package.xml -> /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/share/bump_and_go
+[12.935s] running install_egg_info
+[12.969s] removing '/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages/bump_and_go-0.0.0-py3.10.egg-info' (and everything under it)
+[13.185s] Copying build/bump_and_go/bump_and_go.egg-info to /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages/bump_and_go-0.0.0-py3.10.egg-info
+[13.973s] running install_scripts
+[14.245s] Installing bump_and_go = bump_and_go.bump_and_go:mainkeyboard_teleop script to /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/bump_and_go
+[14.278s] writing list of installed files to '/gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/install.log'
+[14.339s] Invoked command in '/gobilda_sim/ros_ws/src/bump_and_go' returned '0': PYTHONPATH=/gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base build/bump_and_go build --build-base /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/build install --record /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/install.log --single-version-externally-managed install_data

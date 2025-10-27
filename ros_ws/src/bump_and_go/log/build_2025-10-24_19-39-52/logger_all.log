@@ -1,0 +1,89 @@
+[1.393s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[1.393s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7ced5f760f10>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7ced5f89d6c0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7ced5f89d6c0>>, mixin_verb=('build',))
+[2.121s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[2.123s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/Gazebo.meta'
+[2.124s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/fastrtps.meta'
+[2.125s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[2.125s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[2.126s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[2.126s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[2.126s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[2.128s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/gobilda_sim/ros_ws/src/bump_and_go'
+[2.132s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[2.133s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[2.134s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[2.135s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[2.136s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[2.136s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[2.137s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[2.137s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[2.142s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[2.211s] DEBUG:colcon.colcon_core.package_identification:Package '.' with type 'ros.ament_python' and name 'bump_and_go'
+[2.212s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[2.212s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[2.213s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[2.213s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[2.213s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[2.475s] Level 5:colcon.colcon_core.verb:set package 'bump_and_go' build argument 'cmake_args' from command line to 'None'
+[2.475s] Level 5:colcon.colcon_core.verb:set package 'bump_and_go' build argument 'cmake_target' from command line to 'None'
+[2.476s] Level 5:colcon.colcon_core.verb:set package 'bump_and_go' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.476s] Level 5:colcon.colcon_core.verb:set package 'bump_and_go' build argument 'cmake_clean_cache' from command line to 'False'
+[2.476s] Level 5:colcon.colcon_core.verb:set package 'bump_and_go' build argument 'cmake_clean_first' from command line to 'False'
+[2.476s] Level 5:colcon.colcon_core.verb:set package 'bump_and_go' build argument 'cmake_force_configure' from command line to 'False'
+[2.477s] Level 5:colcon.colcon_core.verb:set package 'bump_and_go' build argument 'ament_cmake_args' from command line to 'None'
+[2.482s] Level 5:colcon.colcon_core.verb:set package 'bump_and_go' build argument 'catkin_cmake_args' from command line to 'None'
+[2.482s] Level 5:colcon.colcon_core.verb:set package 'bump_and_go' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.483s] DEBUG:colcon.colcon_core.verb:Building package 'bump_and_go' with the following arguments: {'ament_cmake_args': None, 'build_base': '/gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go', 'merge_install': False, 'path': '/gobilda_sim/ros_ws/src/bump_and_go', 'symlink_install': False, 'test_result_base': None}
+[2.484s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[2.486s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[2.487s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/gobilda_sim/ros_ws/src/bump_and_go' with build type 'ament_python'
+[2.487s] Level 1:colcon.colcon_core.shell:create_environment_hook('bump_and_go', 'ament_prefix_path')
+[2.536s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[2.536s] INFO:colcon.colcon_core.shell:Creating environment hook '/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/share/bump_and_go/hook/ament_prefix_path.ps1'
+[2.586s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/share/bump_and_go/hook/ament_prefix_path.dsv'
+[2.632s] INFO:colcon.colcon_core.shell:Creating environment hook '/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/share/bump_and_go/hook/ament_prefix_path.sh'
+[2.670s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.670s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.106s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/gobilda_sim/ros_ws/src/bump_and_go'
+[5.107s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.108s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[9.819s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/gobilda_sim/ros_ws/src/bump_and_go': PYTHONPATH=/gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base build/bump_and_go build --build-base /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/build install --record /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/install.log --single-version-externally-managed install_data
+[16.207s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/gobilda_sim/ros_ws/src/bump_and_go' returned '0': PYTHONPATH=/gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base build/bump_and_go build --build-base /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/build install --record /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/install.log --single-version-externally-managed install_data
+[16.235s] Level 1:colcon.colcon_core.environment:checking '/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go' for CMake module files
+[16.412s] Level 1:colcon.colcon_core.environment:checking '/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go' for CMake config files
+[16.653s] Level 1:colcon.colcon_core.environment:checking '/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib'
+[16.672s] Level 1:colcon.colcon_core.environment:checking '/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/bin'
+[16.674s] Level 1:colcon.colcon_core.environment:checking '/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/pkgconfig/bump_and_go.pc'
+[16.677s] Level 1:colcon.colcon_core.environment:checking '/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages'
+[16.684s] Level 1:colcon.colcon_core.shell:create_environment_hook('bump_and_go', 'pythonpath')
+[16.685s] INFO:colcon.colcon_core.shell:Creating environment hook '/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/share/bump_and_go/hook/pythonpath.ps1'
+[16.725s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/share/bump_and_go/hook/pythonpath.dsv'
+[16.772s] INFO:colcon.colcon_core.shell:Creating environment hook '/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/share/bump_and_go/hook/pythonpath.sh'
+[16.813s] Level 1:colcon.colcon_core.environment:checking '/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/bin'
+[16.815s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(bump_and_go)
+[16.816s] INFO:colcon.colcon_core.shell:Creating package script '/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/share/bump_and_go/package.ps1'
+[16.866s] INFO:colcon.colcon_core.shell:Creating package descriptor '/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/share/bump_and_go/package.dsv'
+[16.905s] INFO:colcon.colcon_core.shell:Creating package script '/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/share/bump_and_go/package.sh'
+[16.953s] INFO:colcon.colcon_core.shell:Creating package script '/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/share/bump_and_go/package.bash'
+[16.985s] INFO:colcon.colcon_core.shell:Creating package script '/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/share/bump_and_go/package.zsh'
+[17.026s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/share/colcon-core/packages/bump_and_go)
+[17.071s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[17.071s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[17.072s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[17.072s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[17.164s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[17.165s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[17.166s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[17.166s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[17.171s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.Spawn.ExecFailed: /usr/bin/dbus-launch terminated abnormally without any error message
+[17.172s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[17.173s] INFO:colcon.colcon_core.shell:Creating prefix script '/gobilda_sim/ros_ws/src/bump_and_go/install/local_setup.ps1'
+[17.198s] INFO:colcon.colcon_core.shell:Creating prefix util module '/gobilda_sim/ros_ws/src/bump_and_go/install/_local_setup_util_ps1.py'
+[17.216s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/gobilda_sim/ros_ws/src/bump_and_go/install/setup.ps1'
+[17.260s] INFO:colcon.colcon_core.shell:Creating prefix script '/gobilda_sim/ros_ws/src/bump_and_go/install/local_setup.sh'
+[17.272s] INFO:colcon.colcon_core.shell:Creating prefix util module '/gobilda_sim/ros_ws/src/bump_and_go/install/_local_setup_util_sh.py'
+[17.287s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/gobilda_sim/ros_ws/src/bump_and_go/install/setup.sh'
+[17.330s] INFO:colcon.colcon_core.shell:Creating prefix script '/gobilda_sim/ros_ws/src/bump_and_go/install/local_setup.bash'
+[17.345s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/gobilda_sim/ros_ws/src/bump_and_go/install/setup.bash'
+[17.378s] INFO:colcon.colcon_core.shell:Creating prefix script '/gobilda_sim/ros_ws/src/bump_and_go/install/local_setup.zsh'
+[17.394s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/gobilda_sim/ros_ws/src/bump_and_go/install/setup.zsh'

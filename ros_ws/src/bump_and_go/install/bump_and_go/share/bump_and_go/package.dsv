@@ -1,0 +1,6 @@
+source;share/bump_and_go/hook/pythonpath.ps1
+source;share/bump_and_go/hook/pythonpath.dsv
+source;share/bump_and_go/hook/pythonpath.sh
+source;share/bump_and_go/hook/ament_prefix_path.ps1
+source;share/bump_and_go/hook/ament_prefix_path.dsv
+source;share/bump_and_go/hook/ament_prefix_path.sh

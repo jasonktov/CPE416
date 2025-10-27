@@ -1,0 +1,27 @@
+[16.729s] Invoking command in '/gobilda_sim/ros_ws/src/bump_and_go': PYTHONPATH=/gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base build/bump_and_go build --build-base /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/build install --record /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/install.log --single-version-externally-managed install_data
+[23.052s] running egg_info
+[23.357s] writing build/bump_and_go/bump_and_go.egg-info/PKG-INFO
+[23.498s] writing dependency_links to build/bump_and_go/bump_and_go.egg-info/dependency_links.txt
+[23.535s] writing entry points to build/bump_and_go/bump_and_go.egg-info/entry_points.txt
+[23.609s] writing requirements to build/bump_and_go/bump_and_go.egg-info/requires.txt
+[23.661s] writing top-level names to build/bump_and_go/bump_and_go.egg-info/top_level.txt
+[23.919s] reading manifest file 'build/bump_and_go/bump_and_go.egg-info/SOURCES.txt'
+[24.279s] writing manifest file 'build/bump_and_go/bump_and_go.egg-info/SOURCES.txt'
+[24.289s] running build
+[24.292s] running build_py
+[24.374s] copying bump_and_go/bump_and_go.py -> /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/build/lib/bump_and_go
+[24.619s] running install
+[24.624s] running install_lib
+[24.782s] copying /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/build/lib/bump_and_go/bump_and_go.py -> /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages/bump_and_go
+[25.304s] byte-compiling /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages/bump_and_go/bump_and_go.py to bump_and_go.cpython-310.pyc
+[25.512s] byte-compiling /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages/bump_and_go/obstacle_detector.py to obstacle_detector.cpython-310.pyc
+[25.586s] Sorry: IndentationError: expected an indented block after function definition on line 102 (obstacle_detector.py, line 105)
+[25.699s] running install_data
+[25.810s] running install_egg_info
+[25.845s] removing '/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages/bump_and_go-0.0.0-py3.10.egg-info' (and everything under it)
+[26.392s] Copying build/bump_and_go/bump_and_go.egg-info to /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages/bump_and_go-0.0.0-py3.10.egg-info
+[27.495s] running install_scripts
+[27.917s] Installing bump_and_go script to /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/bump_and_go
+[28.012s] Installing keyboard_teleop script to /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/bump_and_go
+[28.061s] writing list of installed files to '/gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/install.log'
+[28.190s] Invoked command in '/gobilda_sim/ros_ws/src/bump_and_go' returned '0': PYTHONPATH=/gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base build/bump_and_go build --build-base /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/build install --record /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/install.log --single-version-externally-managed install_data

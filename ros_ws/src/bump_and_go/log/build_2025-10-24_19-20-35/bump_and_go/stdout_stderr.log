@@ -1,0 +1,19 @@
+running develop
+/usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+running egg_info
+writing bump_and_go.egg-info/PKG-INFO
+writing dependency_links to bump_and_go.egg-info/dependency_links.txt
+writing entry points to bump_and_go.egg-info/entry_points.txt
+writing requirements to bump_and_go.egg-info/requires.txt
+writing top-level names to bump_and_go.egg-info/top_level.txt
+reading manifest file 'bump_and_go.egg-info/SOURCES.txt'
+writing manifest file 'bump_and_go.egg-info/SOURCES.txt'
+running build_ext
+Creating /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages/bump-and-go.egg-link (link to .)
+Installing bump_and_go script to /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/bump_and_go
+
+Installed /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go
+running symlink_data
+symbolically linking /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/resource/bump_and_go -> /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/share/ament_index/resource_index/packages
+symbolically linking /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/package.xml -> /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/share/bump_and_go

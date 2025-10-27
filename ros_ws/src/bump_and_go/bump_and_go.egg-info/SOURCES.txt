@@ -1,0 +1,14 @@
+package.xml
+setup.cfg
+setup.py
+bump_and_go/__init__.py
+bump_and_go.egg-info/PKG-INFO
+bump_and_go.egg-info/SOURCES.txt
+bump_and_go.egg-info/dependency_links.txt
+bump_and_go.egg-info/requires.txt
+bump_and_go.egg-info/top_level.txt
+bump_and_go.egg-info/zip-safe
+resource/bump_and_go
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py

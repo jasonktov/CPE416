@@ -1,0 +1,24 @@
+running egg_info
+writing build/bump_and_go/bump_and_go.egg-info/PKG-INFO
+writing dependency_links to build/bump_and_go/bump_and_go.egg-info/dependency_links.txt
+writing entry points to build/bump_and_go/bump_and_go.egg-info/entry_points.txt
+writing requirements to build/bump_and_go/bump_and_go.egg-info/requires.txt
+writing top-level names to build/bump_and_go/bump_and_go.egg-info/top_level.txt
+reading manifest file 'build/bump_and_go/bump_and_go.egg-info/SOURCES.txt'
+writing manifest file 'build/bump_and_go/bump_and_go.egg-info/SOURCES.txt'
+running build
+running build_py
+copying bump_and_go/bump_and_go.py -> /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/build/lib/bump_and_go
+running install
+running install_lib
+copying /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/build/lib/bump_and_go/bump_and_go.py -> /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages/bump_and_go
+byte-compiling /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages/bump_and_go/bump_and_go.py to bump_and_go.cpython-310.pyc
+byte-compiling /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages/bump_and_go/obstacle_detector.py to obstacle_detector.cpython-310.pyc
+running install_data
+running install_egg_info
+removing '/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages/bump_and_go-0.0.0-py3.10.egg-info' (and everything under it)
+Copying build/bump_and_go/bump_and_go.egg-info to /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages/bump_and_go-0.0.0-py3.10.egg-info
+running install_scripts
+Installing bump_and_go script to /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/bump_and_go
+Installing keyboard_teleop script to /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/bump_and_go
+writing list of installed files to '/gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/install.log'

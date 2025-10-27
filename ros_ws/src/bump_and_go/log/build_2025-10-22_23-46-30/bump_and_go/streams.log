@@ -1,0 +1,24 @@
+[4.965s] Invoking command in '/gobilda_sim/ros_ws/src/bump_and_go': PYTHONPATH=/gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base build/bump_and_go build --build-base /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/build install --record /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/install.log --single-version-externally-managed install_data
+[6.816s] running egg_info
+[6.839s] writing build/bump_and_go/bump_and_go.egg-info/PKG-INFO
+[6.863s] writing dependency_links to build/bump_and_go/bump_and_go.egg-info/dependency_links.txt
+[6.882s] writing entry points to build/bump_and_go/bump_and_go.egg-info/entry_points.txt
+[6.900s] writing requirements to build/bump_and_go/bump_and_go.egg-info/requires.txt
+[6.931s] writing top-level names to build/bump_and_go/bump_and_go.egg-info/top_level.txt
+[7.032s] reading manifest file 'build/bump_and_go/bump_and_go.egg-info/SOURCES.txt'
+[7.240s] writing manifest file 'build/bump_and_go/bump_and_go.egg-info/SOURCES.txt'
+[7.250s] running build
+[7.251s] running build_py
+[7.305s] copying bump_and_go/bump_and_go.py -> /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/build/lib/bump_and_go
+[7.395s] running install
+[7.398s] running install_lib
+[7.513s] copying /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/build/lib/bump_and_go/bump_and_go.py -> /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages/bump_and_go
+[7.635s] byte-compiling /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages/bump_and_go/bump_and_go.py to bump_and_go.cpython-310.pyc
+[7.771s] running install_data
+[7.825s] running install_egg_info
+[7.848s] removing '/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages/bump_and_go-0.0.0-py3.10.egg-info' (and everything under it)
+[7.990s] Copying build/bump_and_go/bump_and_go.egg-info to /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages/bump_and_go-0.0.0-py3.10.egg-info
+[8.501s] running install_scripts
+[8.650s] Installing bump_and_go script to /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/bump_and_go
+[8.671s] writing list of installed files to '/gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/install.log'
+[8.712s] Invoked command in '/gobilda_sim/ros_ws/src/bump_and_go' returned '0': PYTHONPATH=/gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base build/bump_and_go build --build-base /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/build install --record /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/install.log --single-version-externally-managed install_data

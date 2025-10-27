@@ -1,0 +1,208 @@
+[0.000000] (-) TimerEvent: {}
+[0.000555] (bump_and_go) JobQueued: {'identifier': 'bump_and_go', 'dependencies': OrderedDict()}
+[0.001019] (bump_and_go) JobStarted: {'identifier': 'bump_and_go'}
+[0.096061] (-) TimerEvent: {}
+[0.199439] (-) TimerEvent: {}
+[0.301809] (-) TimerEvent: {}
+[0.402867] (-) TimerEvent: {}
+[0.505984] (-) TimerEvent: {}
+[0.608156] (-) TimerEvent: {}
+[0.709971] (-) TimerEvent: {}
+[0.820146] (-) TimerEvent: {}
+[0.935370] (-) TimerEvent: {}
+[1.036402] (-) TimerEvent: {}
+[1.144219] (-) TimerEvent: {}
+[1.245314] (-) TimerEvent: {}
+[1.346166] (-) TimerEvent: {}
+[1.449706] (-) TimerEvent: {}
+[1.550844] (-) TimerEvent: {}
+[1.658411] (-) TimerEvent: {}
+[1.759864] (-) TimerEvent: {}
+[1.860684] (-) TimerEvent: {}
+[1.964981] (-) TimerEvent: {}
+[2.067933] (-) TimerEvent: {}
+[2.168889] (-) TimerEvent: {}
+[2.274575] (-) TimerEvent: {}
+[2.375590] (-) TimerEvent: {}
+[2.487030] (-) TimerEvent: {}
+[2.599423] (-) TimerEvent: {}
+[2.707339] (-) TimerEvent: {}
+[2.824143] (-) TimerEvent: {}
+[2.930132] (-) TimerEvent: {}
+[3.035518] (-) TimerEvent: {}
+[3.136597] (-) TimerEvent: {}
+[3.237418] (-) TimerEvent: {}
+[3.338634] (-) TimerEvent: {}
+[3.439820] (-) TimerEvent: {}
+[3.541060] (-) TimerEvent: {}
+[3.642965] (-) TimerEvent: {}
+[3.743895] (-) TimerEvent: {}
+[3.844854] (-) TimerEvent: {}
+[3.945908] (-) TimerEvent: {}
+[4.048012] (-) TimerEvent: {}
+[4.149219] (-) TimerEvent: {}
+[4.253173] (-) TimerEvent: {}
+[4.354257] (-) TimerEvent: {}
+[4.455801] (-) TimerEvent: {}
+[4.561799] (-) TimerEvent: {}
+[4.667924] (-) TimerEvent: {}
+[4.769632] (-) TimerEvent: {}
+[4.870905] (-) TimerEvent: {}
+[4.971871] (-) TimerEvent: {}
+[5.072851] (-) TimerEvent: {}
+[5.173895] (-) TimerEvent: {}
+[5.275368] (-) TimerEvent: {}
+[5.377682] (-) TimerEvent: {}
+[5.482502] (-) TimerEvent: {}
+[5.584108] (-) TimerEvent: {}
+[5.686816] (-) TimerEvent: {}
+[5.791890] (-) TimerEvent: {}
+[5.902870] (-) TimerEvent: {}
+[6.005739] (-) TimerEvent: {}
+[6.106702] (-) TimerEvent: {}
+[6.211486] (-) TimerEvent: {}
+[6.315450] (-) TimerEvent: {}
+[6.422407] (-) TimerEvent: {}
+[6.524829] (-) TimerEvent: {}
+[6.707451] (-) TimerEvent: {}
+[6.882416] (-) TimerEvent: {}
+[7.043175] (-) TimerEvent: {}
+[7.148883] (-) TimerEvent: {}
+[7.250132] (-) TimerEvent: {}
+[7.351231] (-) TimerEvent: {}
+[7.453174] (-) TimerEvent: {}
+[7.556813] (-) TimerEvent: {}
+[7.658077] (-) TimerEvent: {}
+[7.762390] (-) TimerEvent: {}
+[7.868933] (-) TimerEvent: {}
+[7.970287] (-) TimerEvent: {}
+[8.075645] (-) TimerEvent: {}
+[8.179008] (-) TimerEvent: {}
+[8.282342] (-) TimerEvent: {}
+[8.385325] (-) TimerEvent: {}
+[8.487006] (-) TimerEvent: {}
+[8.588450] (-) TimerEvent: {}
+[8.690535] (-) TimerEvent: {}
+[8.791804] (-) TimerEvent: {}
+[8.892989] (-) TimerEvent: {}
+[8.994173] (-) TimerEvent: {}
+[9.097395] (-) TimerEvent: {}
+[9.206974] (-) TimerEvent: {}
+[9.307939] (-) TimerEvent: {}
+[9.365307] (bump_and_go) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'egg_info', '--egg-base', 'build/bump_and_go', 'build', '--build-base', '/gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/build', 'install', '--record', '/gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/gobilda_sim/ros_ws/src/bump_and_go', 'env': {'HOSTNAME': '5daf7c25ba40', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/root', 'OLDPWD': '/gobilda_sim/ros_ws/src', 'ROS_PYTHON_VERSION': '3', 'COLCON_PREFIX_PATH': '/gobilda_sim/ros_ws/src/bump_and_go/install', 'ROS_DISTRO': 'humble', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': 'novnc:0.0', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go:/opt/ros/humble', 'PWD': '/gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages:/gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go:/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1'}, 'shell': False}
+[9.408343] (-) TimerEvent: {}
+[9.510520] (-) TimerEvent: {}
+[9.635558] (-) TimerEvent: {}
+[9.736922] (-) TimerEvent: {}
+[9.838699] (-) TimerEvent: {}
+[9.939741] (-) TimerEvent: {}
+[10.041418] (-) TimerEvent: {}
+[10.142927] (-) TimerEvent: {}
+[10.252824] (-) TimerEvent: {}
+[10.369181] (-) TimerEvent: {}
+[10.493755] (-) TimerEvent: {}
+[10.612164] (-) TimerEvent: {}
+[10.724842] (-) TimerEvent: {}
+[10.826281] (-) TimerEvent: {}
+[10.927781] (-) TimerEvent: {}
+[11.031359] (-) TimerEvent: {}
+[11.134410] (-) TimerEvent: {}
+[11.235681] (-) TimerEvent: {}
+[11.337177] (-) TimerEvent: {}
+[11.439754] (-) TimerEvent: {}
+[11.542437] (-) TimerEvent: {}
+[11.645446] (-) TimerEvent: {}
+[11.747869] (-) TimerEvent: {}
+[11.854272] (-) TimerEvent: {}
+[11.955554] (-) TimerEvent: {}
+[12.062971] (-) TimerEvent: {}
+[12.164742] (-) TimerEvent: {}
+[12.267041] (-) TimerEvent: {}
+[12.381241] (-) TimerEvent: {}
+[12.500649] (-) TimerEvent: {}
+[12.632925] (-) TimerEvent: {}
+[12.742764] (-) TimerEvent: {}
+[12.854356] (-) TimerEvent: {}
+[12.957366] (-) TimerEvent: {}
+[13.063697] (-) TimerEvent: {}
+[13.165222] (-) TimerEvent: {}
+[13.270371] (-) TimerEvent: {}
+[13.371427] (-) TimerEvent: {}
+[13.472675] (-) TimerEvent: {}
+[13.573601] (-) TimerEvent: {}
+[13.675170] (-) TimerEvent: {}
+[13.776185] (-) TimerEvent: {}
+[13.877306] (-) TimerEvent: {}
+[13.978300] (-) TimerEvent: {}
+[14.015455] (bump_and_go) StdoutLine: {'line': b'running egg_info\n'}
+[14.033871] (bump_and_go) StdoutLine: {'line': b'writing build/bump_and_go/bump_and_go.egg-info/PKG-INFO\n'}
+[14.056638] (bump_and_go) StdoutLine: {'line': b'writing dependency_links to build/bump_and_go/bump_and_go.egg-info/dependency_links.txt\n'}
+[14.075413] (bump_and_go) StdoutLine: {'line': b'writing entry points to build/bump_and_go/bump_and_go.egg-info/entry_points.txt\n'}
+[14.078461] (-) TimerEvent: {}
+[14.099131] (bump_and_go) StdoutLine: {'line': b'writing requirements to build/bump_and_go/bump_and_go.egg-info/requires.txt\n'}
+[14.114042] (bump_and_go) StdoutLine: {'line': b'writing top-level names to build/bump_and_go/bump_and_go.egg-info/top_level.txt\n'}
+[14.178669] (-) TimerEvent: {}
+[14.254660] (bump_and_go) StdoutLine: {'line': b"reading manifest file 'build/bump_and_go/bump_and_go.egg-info/SOURCES.txt'\n"}
+[14.279187] (-) TimerEvent: {}
+[14.380063] (-) TimerEvent: {}
+[14.483158] (-) TimerEvent: {}
+[14.570298] (bump_and_go) StdoutLine: {'line': b"writing manifest file 'build/bump_and_go/bump_and_go.egg-info/SOURCES.txt'\n"}
+[14.583386] (-) TimerEvent: {}
+[14.585226] (bump_and_go) StdoutLine: {'line': b'running build\n'}
+[14.587958] (bump_and_go) StdoutLine: {'line': b'running build_py\n'}
+[14.647037] (bump_and_go) StdoutLine: {'line': b'copying bump_and_go/bump_and_go.py -> /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/build/lib/bump_and_go\n'}
+[14.718438] (-) TimerEvent: {}
+[14.820506] (-) TimerEvent: {}
+[14.920337] (bump_and_go) StdoutLine: {'line': b'running install\n'}
+[14.922087] (-) TimerEvent: {}
+[14.922946] (bump_and_go) StdoutLine: {'line': b'running install_lib\n'}
+[15.022355] (-) TimerEvent: {}
+[15.068629] (bump_and_go) StdoutLine: {'line': b'copying /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/build/lib/bump_and_go/bump_and_go.py -> /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages/bump_and_go\n'}
+[15.129677] (-) TimerEvent: {}
+[15.230617] (-) TimerEvent: {}
+[15.336208] (-) TimerEvent: {}
+[15.443950] (-) TimerEvent: {}
+[15.471736] (bump_and_go) StdoutLine: {'line': b'byte-compiling /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages/bump_and_go/bump_and_go.py to bump_and_go.cpython-310.pyc\n'}
+[15.544123] (-) TimerEvent: {}
+[15.648774] (-) TimerEvent: {}
+[15.701162] (bump_and_go) StdoutLine: {'line': b'byte-compiling /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages/bump_and_go/obstacle_detector.py to obstacle_detector.cpython-310.pyc\n'}
+[15.753157] (-) TimerEvent: {}
+[15.794758] (bump_and_go) StderrLine: {'line': b'Sorry: IndentationError: expected an indented block after function definition on line 102 (obstacle_detector.py, line 105)\n'}
+[15.854671] (-) TimerEvent: {}
+[15.890336] (bump_and_go) StdoutLine: {'line': b'running install_data\n'}
+[15.956887] (-) TimerEvent: {}
+[15.958557] (bump_and_go) StdoutLine: {'line': b'running install_egg_info\n'}
+[16.006187] (bump_and_go) StdoutLine: {'line': b"removing '/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages/bump_and_go-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[16.057094] (-) TimerEvent: {}
+[16.158025] (-) TimerEvent: {}
+[16.243387] (bump_and_go) StdoutLine: {'line': b'Copying build/bump_and_go/bump_and_go.egg-info to /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages/bump_and_go-0.0.0-py3.10.egg-info\n'}
+[16.258349] (-) TimerEvent: {}
+[16.361066] (-) TimerEvent: {}
+[16.464790] (-) TimerEvent: {}
+[16.571340] (-) TimerEvent: {}
+[16.675026] (-) TimerEvent: {}
+[16.780584] (-) TimerEvent: {}
+[16.883805] (-) TimerEvent: {}
+[16.985647] (-) TimerEvent: {}
+[17.070469] (bump_and_go) StdoutLine: {'line': b'running install_scripts\n'}
+[17.085813] (-) TimerEvent: {}
+[17.190471] (-) TimerEvent: {}
+[17.291508] (-) TimerEvent: {}
+[17.379870] (bump_and_go) StdoutLine: {'line': b'Installing bump_and_go script to /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/bump_and_go\n'}
+[17.391715] (-) TimerEvent: {}
+[17.437479] (bump_and_go) StdoutLine: {'line': b'Installing keyboard_teleop script to /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/bump_and_go\n'}
+[17.466579] (bump_and_go) StdoutLine: {'line': b"writing list of installed files to '/gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/install.log'\n"}
+[17.491920] (-) TimerEvent: {}
+[17.548187] (bump_and_go) CommandEnded: {'returncode': 0}
+[17.602356] (-) TimerEvent: {}
+[17.703969] (-) TimerEvent: {}
+[17.807589] (-) TimerEvent: {}
+[17.909182] (-) TimerEvent: {}
+[18.010195] (-) TimerEvent: {}
+[18.114815] (-) TimerEvent: {}
+[18.217637] (-) TimerEvent: {}
+[18.321714] (-) TimerEvent: {}
+[18.426821] (-) TimerEvent: {}
+[18.527684] (-) TimerEvent: {}
+[18.577875] (bump_and_go) JobEnded: {'identifier': 'bump_and_go', 'rc': 0}
+[18.604090] (-) EventReactorShutdown: {}

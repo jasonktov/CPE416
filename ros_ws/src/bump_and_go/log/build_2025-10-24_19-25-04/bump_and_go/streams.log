@@ -1,0 +1,34 @@
+[7.425s] Invoking command in '/gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go': PYTHONPATH=/gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --uninstall --editable --build-directory /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/build
+[9.457s] running develop
+[9.458s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[9.463s]   warnings.warn(
+[10.433s] Removing /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages/bump-and-go.egg-link (link to .)
+[10.532s] Invoked command in '/gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go' returned '0': PYTHONPATH=/gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --uninstall --editable --build-directory /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/build
+[10.571s] Invoking command in '/gobilda_sim/ros_ws/src/bump_and_go': PYTHONPATH=/gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base build/bump_and_go build --build-base /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/build install --record /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/install.log --single-version-externally-managed install_data --force
+[14.790s] running egg_info
+[14.866s] writing build/bump_and_go/bump_and_go.egg-info/PKG-INFO
+[14.892s] writing dependency_links to build/bump_and_go/bump_and_go.egg-info/dependency_links.txt
+[14.917s] writing entry points to build/bump_and_go/bump_and_go.egg-info/entry_points.txt
+[14.925s] writing requirements to build/bump_and_go/bump_and_go.egg-info/requires.txt
+[14.931s] writing top-level names to build/bump_and_go/bump_and_go.egg-info/top_level.txt
+[15.063s] reading manifest file 'build/bump_and_go/bump_and_go.egg-info/SOURCES.txt'
+[15.332s] writing manifest file 'build/bump_and_go/bump_and_go.egg-info/SOURCES.txt'
+[15.334s] running build
+[15.335s] running build_py
+[15.388s] copying bump_and_go/bump_and_go.py -> /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/build/lib/bump_and_go
+[15.522s] running install
+[15.523s] running install_lib
+[15.581s] creating /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages/bump_and_go
+[15.648s] copying /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/build/lib/bump_and_go/bump_and_go.py -> /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages/bump_and_go
+[15.790s] copying /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/build/lib/bump_and_go/__init__.py -> /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages/bump_and_go
+[15.896s] byte-compiling /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages/bump_and_go/bump_and_go.py to bump_and_go.cpython-310.pyc
+[16.101s] byte-compiling /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages/bump_and_go/__init__.py to __init__.cpython-310.pyc
+[16.200s] running install_data
+[16.236s] copying resource/bump_and_go -> /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/share/ament_index/resource_index/packages
+[16.327s] copying package.xml -> /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/share/bump_and_go
+[16.369s] running install_egg_info
+[16.440s] Copying build/bump_and_go/bump_and_go.egg-info to /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages/bump_and_go-0.0.0-py3.10.egg-info
+[18.652s] running install_scripts
+[19.087s] Installing bump_and_go script to /gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/bump_and_go
+[19.133s] writing list of installed files to '/gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/install.log'
+[19.198s] Invoked command in '/gobilda_sim/ros_ws/src/bump_and_go' returned '0': PYTHONPATH=/gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/gobilda_sim/ros_ws/src/bump_and_go/install/bump_and_go/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base build/bump_and_go build --build-base /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/build install --record /gobilda_sim/ros_ws/src/bump_and_go/build/bump_and_go/install.log --single-version-externally-managed install_data --force
