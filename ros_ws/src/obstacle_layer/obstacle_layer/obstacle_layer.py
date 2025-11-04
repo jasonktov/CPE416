@@ -43,6 +43,8 @@ class LocalCostmap(Node):
             '/occupancy_grid',
             10)
 
+        self.timer = self.create_timer(0.05, self.timer_callback)
+
     ''' Initialize static OccupancyGrid.info and origin so the robot is at the map center. '''
 
     def _init_map_info(self):
@@ -92,7 +94,7 @@ class LocalCostmap(Node):
         error = dx + dy
         free_space_cells = []
         while(True):
-            free_space_cells[-1] = (x0, y0)
+            free_space_cells.append((x0, y0))
             e2 = 2*error
             if(e2 >= dy):
                 if(x0 == x1):
@@ -113,6 +115,9 @@ class LocalCostmap(Node):
 
     def laser_callback(self, msg: LaserScan):
         self.laser_scan = msg
+        return
+
+    def timer_callback(self):
         self.build_occupancy_grid()
         return
 
@@ -142,14 +147,12 @@ class LocalCostmap(Node):
                 x_m = cos(angle) * dist
                 y_m = sin(angle) * dist
                 mx, my = self.world_to_map(x_m, y_m)
-                #self.get_logger().info(f"{mx+(my*self.map_width)}")
-                if(mx+(my*self.map_width) > len(self.publish_map.data)):
-                    self.get_logger().info(f"OOB:{mx+(my*self.map_width)}")
-                else:
-                    self.publish_map.data[mx + (my * self.map_width)] = 100
+                
                 for cell in self.raytrace(mx, my):
                     if(cell[0] + (cell[1]*self.map_width) < len(self.publish_map.data)):
                         self.publish_map.data[cell[0] + (cell[1] * self.map_width)] = 0
+                if(mx+(my*self.map_width) < len(self.publish_map.data)):
+                    self.publish_map.data[mx+(my*self.map_width)] = 100
 
         # Populate OccupancyGrid message
         self.publish_map.header.stamp = self.get_clock().now().to_msg()
