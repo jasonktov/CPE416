@@ -142,16 +142,20 @@ class LocalCostmap(Node):
                 x_m = cos(angle) * dist
                 y_m = sin(angle) * dist
                 mx, my = self.world_to_map(x_m, y_m)
-
-                self.publish_map.data[mx + (my * self.map_width)] = 100
-                #for cell in self.raytrace(mx, my):
-                #   self.self.publish_map.data[cell[0] + (cell[1] * self.map_width)] = 0
+                #self.get_logger().info(f"{mx+(my*self.map_width)}")
+                if(mx+(my*self.map_width) > len(self.publish_map.data)):
+                    self.get_logger().info(f"OOB:{mx+(my*self.map_width)}")
+                else:
+                    self.publish_map.data[mx + (my * self.map_width)] = 100
+                for cell in self.raytrace(mx, my):
+                    if(cell[0] + (cell[1]*self.map_width) < len(self.publish_map.data)):
+                        self.publish_map.data[cell[0] + (cell[1] * self.map_width)] = 0
 
         # Populate OccupancyGrid message
         self.publish_map.header.stamp = self.get_clock().now().to_msg()
         # Set frame to match your robot frame that LaserScan is in (commonly "base_link" or "laser")
         # The simulation and hardware will have different names for this frame
-        self.publish_map.header.frame_id = 'diff_drive/lidar_link'
+        self.publish_map.header.frame_id = 'rplidar_link'
         # Publish
         self.publisher_.publish(self.publish_map)
 
