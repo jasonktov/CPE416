@@ -168,19 +168,24 @@ class Filter(Node):
 
 
     def update(self, odom:PoseWithCovariance):
-        #self.get_logger().info("updating")
         theta_p = euler_from_quaternion(odom.pose.orientation)
-        Z = np.array([[odom.pose.position.x],
-                      [odom.pose.position.y],
-                      [theta_p]])
-        idx = [0, 1, 5]
-        odom_cov = np.array(odom.covariance).reshape(6,6)
-        R = np.array([odom_cov[0][0], odom_cov[0][1], odom_cov[0][5]],
-                     [odom_cov[1][0], odom_cov[1][1], odom_cov[1][5]],
-                     [odom_cov[5][0], odom_cov[5][1], odom_cov[5][5]])
+        Z = np.array([odom.pose.position.x],
+                     [odom.pose.position.y],
+                     [theta_p])
+        self.get_logger().info("Z: %f, %f, %f" % (Z[0][0], Z[1][0], Z[2][0]))
+        #odom_cov = np.array(odom.covariance).reshape(6,6)
+        #R = np.array([[odom_cov[0][0], odom_cov[0][1], odom_cov[0][5]],
+        #              [odom_cov[1][0], odom_cov[1][1], odom_cov[1][5]],
+        #              [odom_cov[5][0], odom_cov[5][1], odom_cov[5][5]]])
 
-        K = self.cov @ np.linalg.inv(self.cov + R)
-        self.state = self.state + K @ (Z - self.state)
+        odom_cov = np.array(odom.covariance, dtype=float).reshape(6, 6)
+        R = odom_cov[np.ix_([0,1,5], [0,1,5])]
+
+        S = self.cov + R
+        K = self.cov @ np.linalg.inv(S)
+        nu = Z - self.state
+        self.state = (self.state.flatten() + (K @ nu.flatten())).reshape(3,)
+        self.get_logger().info("new state: %f %f %f" % (self.state[0][0], self.state[1][0], self.state[2][0]))
         theta_correct = math.atan2(math.sin(self.state[2][0]), math.cos(self.state[2][0]))
         self.state[2][0] = theta_correct
         self.cov = (np.eye(3) - K) @ self.cov
