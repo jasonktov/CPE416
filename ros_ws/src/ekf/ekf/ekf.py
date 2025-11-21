@@ -58,7 +58,7 @@ class Filter(Node):
     def __init__(self):
         # Init the node with a name (this is the name that appears when running)
         # 'ros2 node list'
-        super().__init__('ekf')
+        super().__init__('CPE416_ekf')
         self.odom_subscription = self.create_subscription(
             Odometry,
             '/kiss/odometry',
@@ -76,13 +76,13 @@ class Filter(Node):
             '/ekf_out',
             10)
 
-        self.odom_queue = Queue(10)
-        self.imu_queue = Queue(10)
+        self.odom_queue = Queue(100)
+        self.imu_queue = Queue(100)
 
         self.odom_cur = None
         self.imu_cur = None
 
-        timer_period = 0.05  # seconds
+        timer_period = 0.05 # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
 
         self.state = np.array([[0],
@@ -93,28 +93,24 @@ class Filter(Node):
                              [0.0001, 0.0001, 0.0001]])
 
     def imu_callback(self, msg):
-        if(self.imu_cur is None):
-            self.imu_cur = msg
-        else:
-            self.imu_queue.put(msg)
+        self.imu_queue.put(msg)
 
     def odom_callback(self, msg):
-        if(self.odom_cur is None):
-            self.odom_cur = msg
-        else:
-            self.odom_queue.put(msg)
+        self.odom_queue.put(msg)
 
     # Callback for the events
     def timer_callback(self):
+        #self.get_logger().info('Timer Hit, %d, %d' % (self.imu_queue.qsize(), self.odom_queue.qsize()))
         # Initialize the message to be sent
         msg = PoseWithCovarianceStamped()
         msg.header.stamp = self.get_clock().now().to_msg()
         msg.header.frame_id = 'diff_drive/base_link'
 
-        #run ekf
-        if(self.odom_cur is None or self.imu_cur is None):
+        if(self.odom_queue.empty() or self.imu_queue.empty()):
             return
-        while(not self.odom_queue.empty() and not self.imu_queue.empty()):
+
+        #run ekf
+        while((not self.odom_queue.empty()) and (not self.imu_queue.empty())):
             #both queues not empty
             self.odom_cur = self.odom_queue.get()
             self.imu_cur = self.imu_queue.get()
@@ -125,7 +121,7 @@ class Filter(Node):
             self.odom_cur = self.odom_queue.get()
             self.predict(self.imu_cur, 0.05)
             self.update(self.odom_cur.pose)
-        while (not self.odom_queue.empty()):
+        while (not self.imu_queue.empty()):
             # odom_queue empty
             self.imu_cur = self.imu_queue.get()
             self.predict(self.imu_cur, 0.05)
@@ -135,27 +131,29 @@ class Filter(Node):
         msg.pose = PoseWithCovariance()
 
         msg.pose.pose = Pose()
-        msg.pose.pose.position.x = self.mu[0][0]
-        msg.pose.pose.position.y = self.mu[1][0]
-        quat = euler_to_quaternion(0, 0, self.mu[2][0])
-        msg.pose.pose.orientation.x = quat[0]
-        msg.pose.pose.orientation.x = quat[1]
-        msg.pose.pose.orientation.x = quat[2]
-        msg.pose.pose.orientation.x = quat[3]
+        msg.pose.pose.position.x = float(self.state[0][0])
+        msg.pose.pose.position.y = float(self.state[1][0])
+        quat = euler_to_quaternion(0, 0, self.state[2][0])
+        msg.pose.pose.orientation.x = float(quat[0])
+        msg.pose.pose.orientation.x = float(quat[1])
+        msg.pose.pose.orientation.x = float(quat[2])
+        msg.pose.pose.orientation.x = float(quat[3])
 
         msg.pose.covariance = np.array([[0, 0, 0, 0, 0, 0],
                                         [0, 0, 0, 0, 0, 0],
                                         [0, 0, 0, 0, 0, 0],
                                         [0, 0, 0, 0, 0, 0],
                                         [0, 0, 0, 0, 0, 0],
-                                        [0, 0, 0, 0, 0, 0]])
+                                        [0, 0, 0, 0, 0, 0]]).astype('float64')
         idx = [0, 1, 5] #x, y, theta positions in covariance matrix
         msg.pose.covariance[np.ix_(idx, idx)] = self.cov
-
+        msg.pose.covariance = msg.pose.covariance.reshape(-1)
+        self.get_logger().info('Publishing: "%f" "%f" "%f"' % (self.state[0][0], self.state[1][0], self.state[2][0]))
         self.publisher_.publish(msg)
 
     def predict(self, imu:Imu, dt):
         #predict state
+        #self.get_logger().info("predicting")
         w = -1 * imu.angular_velocity.x
         theta_pred = self.state[2][0] * w * dt
         if(theta_pred > math.pi):
@@ -165,7 +163,7 @@ class Filter(Node):
         self.state[2][0] = theta_pred
 
         #predict covariance
-        theta_cov = imu.angular_velocity_covariance[3][3]
+        theta_cov = imu.angular_velocity_covariance[8]
         Q = np.array([[0.0001, 0.0001, 0.0001],
                       [0.0001, 0.0001, 0.0001],
                       [0.0001, 0.0001, theta_cov]])
@@ -173,9 +171,10 @@ class Filter(Node):
 
 
     def update(self, odom:PoseWithCovariance):
-        theta_p = euler_from_quaternion(odom.orientation)
-        Z = np.array([[odom.position.x],
-                      [odom.position.y],
+        #self.get_logger().info("updating")
+        theta_p = euler_from_quaternion(odom.pose.orientation)
+        Z = np.array([[odom.pose.position.x],
+                      [odom.pose.position.y],
                       [theta_p]])
         idx = [0, 1, 5]
         R = np.array(odom.covariance).reshape(6, 6)[np.ix_(idx, idx)]
@@ -186,7 +185,6 @@ class Filter(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-
     filter = Filter()
 
     # Spin function *important*
