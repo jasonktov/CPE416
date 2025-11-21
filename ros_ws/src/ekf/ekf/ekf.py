@@ -86,9 +86,9 @@ class Filter(Node):
         self.timer = self.create_timer(timer_period, self.timer_callback)
 
         self.state = np.array([0, 0, 0])
-        self.cov = np.array([[0.0001, 0.0001, 0.0001],
-                             [0.0001, 0.0001, 0.0001],
-                             [0.0001, 0.0001, 0.0001]])
+        self.cov = np.array([[0.0001, 0.0000, 0.0000],
+                             [0.0000, 0.0001, 0.0000],
+                             [0.0000, 0.0000, 0.0001]])
 
     def imu_callback(self, msg):
         self.imu_queue.put(msg)
@@ -176,6 +176,7 @@ class Filter(Node):
 
         odom_cov = np.array(odom.covariance, dtype=float).reshape(6, 6)
         R = odom_cov[np.ix_([0,1,5], [0,1,5])]
+        R[0][1] = R[1][0] = 0.0
 
         S = self.cov + R
         K = self.cov @ np.linalg.inv(S)
@@ -185,6 +186,8 @@ class Filter(Node):
         theta_correct = math.atan2(math.sin(self.state[2]), math.cos(self.state[2]))
         self.state[2] = theta_correct
         self.cov = (np.eye(3) - K) @ self.cov
+
+        self.get_logger().info("K rows equal? %d " % np.allclose(K[0,:], K[1,:]))
 
 def main(args=None):
     rclpy.init(args=args)
