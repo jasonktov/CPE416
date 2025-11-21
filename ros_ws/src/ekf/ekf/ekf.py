@@ -145,8 +145,9 @@ class Filter(Node):
                                         [0, 0, 0, 0, 0, 0],
                                         [0, 0, 0, 0, 0, 0],
                                         [0, 0, 0, 0, 0, 0]]).astype('float64')
-        idx = [0, 1, 5] #x, y, theta positions in covariance matrix
-        msg.pose.covariance[np.ix_(idx, idx)] = self.cov
+        msg.pose.covariance[0][0] = self.cov[0][0]
+        msg.pose.covariance[1][1] = self.cov[1][1]
+        msg.pose.covariance[5][5] = self.cov[2][2]
         msg.pose.covariance = msg.pose.covariance.reshape(-1)
         self.get_logger().info('Publishing: "%f" "%f" "%f"' % (self.state[0][0], self.state[1][0], self.state[2][0]))
         self.publisher_.publish(msg)
@@ -173,7 +174,10 @@ class Filter(Node):
                       [odom.pose.position.y],
                       [theta_p]])
         idx = [0, 1, 5]
-        R = np.array(odom.covariance).reshape(6, 6)[np.ix_(idx, idx)]
+        odom_cov = np.array(odom.covariance).reshape(6,6)
+        R = np.array([odom_cov[0][0], odom_cov[0][1], odom_cov[0][5]],
+                     [odom_cov[1][0], odom_cov[1][1], odom_cov[1][5]],
+                     [odom_cov[5][0], odom_cov[5][1], odom_cov[5][5]])
 
         K = self.cov @ np.linalg.inv(self.cov + R)
         self.state = self.state + K @ (Z - self.state)
