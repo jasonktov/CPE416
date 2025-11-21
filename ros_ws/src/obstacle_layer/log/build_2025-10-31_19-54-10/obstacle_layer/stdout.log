@@ -1,0 +1,35 @@
+running egg_info
+creating build/obstacle_layer/obstacle_layer.egg-info
+writing build/obstacle_layer/obstacle_layer.egg-info/PKG-INFO
+writing dependency_links to build/obstacle_layer/obstacle_layer.egg-info/dependency_links.txt
+writing entry points to build/obstacle_layer/obstacle_layer.egg-info/entry_points.txt
+writing requirements to build/obstacle_layer/obstacle_layer.egg-info/requires.txt
+writing top-level names to build/obstacle_layer/obstacle_layer.egg-info/top_level.txt
+writing manifest file 'build/obstacle_layer/obstacle_layer.egg-info/SOURCES.txt'
+reading manifest file 'build/obstacle_layer/obstacle_layer.egg-info/SOURCES.txt'
+writing manifest file 'build/obstacle_layer/obstacle_layer.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /gobilda_sim/ros_ws/src/obstacle_layer/build/obstacle_layer/build
+creating /gobilda_sim/ros_ws/src/obstacle_layer/build/obstacle_layer/build/lib
+creating /gobilda_sim/ros_ws/src/obstacle_layer/build/obstacle_layer/build/lib/obstacle_layer
+copying obstacle_layer/obstacle_layer.py -> /gobilda_sim/ros_ws/src/obstacle_layer/build/obstacle_layer/build/lib/obstacle_layer
+copying obstacle_layer/__init__.py -> /gobilda_sim/ros_ws/src/obstacle_layer/build/obstacle_layer/build/lib/obstacle_layer
+running install
+running install_lib
+creating /gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/lib/python3.10/site-packages/obstacle_layer
+copying /gobilda_sim/ros_ws/src/obstacle_layer/build/obstacle_layer/build/lib/obstacle_layer/obstacle_layer.py -> /gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/lib/python3.10/site-packages/obstacle_layer
+copying /gobilda_sim/ros_ws/src/obstacle_layer/build/obstacle_layer/build/lib/obstacle_layer/__init__.py -> /gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/lib/python3.10/site-packages/obstacle_layer
+byte-compiling /gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/lib/python3.10/site-packages/obstacle_layer/obstacle_layer.py to obstacle_layer.cpython-310.pyc
+byte-compiling /gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/lib/python3.10/site-packages/obstacle_layer/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/share/ament_index
+creating /gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/share/ament_index/resource_index
+creating /gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/share/ament_index/resource_index/packages
+copying resource/obstacle_layer -> /gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/share/ament_index/resource_index/packages
+copying package.xml -> /gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/share/obstacle_layer
+running install_egg_info
+Copying build/obstacle_layer/obstacle_layer.egg-info to /gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/lib/python3.10/site-packages/obstacle_layer-0.0.0-py3.10.egg-info
+running install_scripts
+Installing obstacle_layer script to /gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/lib/obstacle_layer
+writing list of installed files to '/gobilda_sim/ros_ws/src/obstacle_layer/build/obstacle_layer/install.log'

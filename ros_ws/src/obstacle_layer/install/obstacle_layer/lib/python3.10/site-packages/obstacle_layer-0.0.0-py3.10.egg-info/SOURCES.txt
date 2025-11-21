@@ -1,0 +1,16 @@
+package.xml
+setup.cfg
+setup.py
+build/obstacle_layer/obstacle_layer.egg-info/PKG-INFO
+build/obstacle_layer/obstacle_layer.egg-info/SOURCES.txt
+build/obstacle_layer/obstacle_layer.egg-info/dependency_links.txt
+build/obstacle_layer/obstacle_layer.egg-info/entry_points.txt
+build/obstacle_layer/obstacle_layer.egg-info/requires.txt
+build/obstacle_layer/obstacle_layer.egg-info/top_level.txt
+build/obstacle_layer/obstacle_layer.egg-info/zip-safe
+obstacle_layer/__init__.py
+obstacle_layer/obstacle_layer.py
+resource/obstacle_layer
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py

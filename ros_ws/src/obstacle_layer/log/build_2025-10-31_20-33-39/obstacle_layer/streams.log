@@ -1,0 +1,24 @@
+[7.591s] Invoking command in '/gobilda_sim/ros_ws/src/obstacle_layer': PYTHONPATH=/gobilda_sim/ros_ws/src/obstacle_layer/build/obstacle_layer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base build/obstacle_layer build --build-base /gobilda_sim/ros_ws/src/obstacle_layer/build/obstacle_layer/build install --record /gobilda_sim/ros_ws/src/obstacle_layer/build/obstacle_layer/install.log --single-version-externally-managed install_data
+[14.046s] running egg_info
+[14.063s] writing build/obstacle_layer/obstacle_layer.egg-info/PKG-INFO
+[14.099s] writing dependency_links to build/obstacle_layer/obstacle_layer.egg-info/dependency_links.txt
+[14.112s] writing entry points to build/obstacle_layer/obstacle_layer.egg-info/entry_points.txt
+[14.129s] writing requirements to build/obstacle_layer/obstacle_layer.egg-info/requires.txt
+[14.150s] writing top-level names to build/obstacle_layer/obstacle_layer.egg-info/top_level.txt
+[14.618s] reading manifest file 'build/obstacle_layer/obstacle_layer.egg-info/SOURCES.txt'
+[14.919s] writing manifest file 'build/obstacle_layer/obstacle_layer.egg-info/SOURCES.txt'
+[14.922s] running build
+[14.924s] running build_py
+[14.990s] copying obstacle_layer/obstacle_layer.py -> /gobilda_sim/ros_ws/src/obstacle_layer/build/obstacle_layer/build/lib/obstacle_layer
+[15.093s] running install
+[15.095s] running install_lib
+[15.224s] copying /gobilda_sim/ros_ws/src/obstacle_layer/build/obstacle_layer/build/lib/obstacle_layer/obstacle_layer.py -> /gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/lib/python3.10/site-packages/obstacle_layer
+[15.455s] byte-compiling /gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/lib/python3.10/site-packages/obstacle_layer/obstacle_layer.py to obstacle_layer.cpython-310.pyc
+[15.694s] running install_data
+[15.826s] running install_egg_info
+[15.884s] removing '/gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/lib/python3.10/site-packages/obstacle_layer-0.0.0-py3.10.egg-info' (and everything under it)
+[16.178s] Copying build/obstacle_layer/obstacle_layer.egg-info to /gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/lib/python3.10/site-packages/obstacle_layer-0.0.0-py3.10.egg-info
+[17.131s] running install_scripts
+[17.386s] Installing obstacle_layer script to /gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/lib/obstacle_layer
+[17.431s] writing list of installed files to '/gobilda_sim/ros_ws/src/obstacle_layer/build/obstacle_layer/install.log'
+[17.508s] Invoked command in '/gobilda_sim/ros_ws/src/obstacle_layer' returned '0': PYTHONPATH=/gobilda_sim/ros_ws/src/obstacle_layer/build/obstacle_layer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base build/obstacle_layer build --build-base /gobilda_sim/ros_ws/src/obstacle_layer/build/obstacle_layer/build install --record /gobilda_sim/ros_ws/src/obstacle_layer/build/obstacle_layer/install.log --single-version-externally-managed install_data

@@ -1,0 +1,89 @@
+[1.338s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[1.343s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x791ec3854ca0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x791ec3991450>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x791ec3991450>>, mixin_verb=('build',))
+[2.102s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[2.104s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/Gazebo.meta'
+[2.105s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/fastrtps.meta'
+[2.106s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[2.110s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[2.111s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[2.114s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[2.116s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[2.119s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/gobilda_sim/ros_ws/src/obstacle_layer'
+[2.130s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[2.130s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[2.131s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[2.137s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[2.138s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[2.140s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[2.141s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[2.141s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[2.142s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[2.213s] DEBUG:colcon.colcon_core.package_identification:Package '.' with type 'ros.ament_python' and name 'obstacle_layer'
+[2.214s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[2.215s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[2.216s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[2.216s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[2.216s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[2.423s] Level 5:colcon.colcon_core.verb:set package 'obstacle_layer' build argument 'cmake_args' from command line to 'None'
+[2.424s] Level 5:colcon.colcon_core.verb:set package 'obstacle_layer' build argument 'cmake_target' from command line to 'None'
+[2.424s] Level 5:colcon.colcon_core.verb:set package 'obstacle_layer' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.425s] Level 5:colcon.colcon_core.verb:set package 'obstacle_layer' build argument 'cmake_clean_cache' from command line to 'False'
+[2.425s] Level 5:colcon.colcon_core.verb:set package 'obstacle_layer' build argument 'cmake_clean_first' from command line to 'False'
+[2.425s] Level 5:colcon.colcon_core.verb:set package 'obstacle_layer' build argument 'cmake_force_configure' from command line to 'False'
+[2.426s] Level 5:colcon.colcon_core.verb:set package 'obstacle_layer' build argument 'ament_cmake_args' from command line to 'None'
+[2.426s] Level 5:colcon.colcon_core.verb:set package 'obstacle_layer' build argument 'catkin_cmake_args' from command line to 'None'
+[2.427s] Level 5:colcon.colcon_core.verb:set package 'obstacle_layer' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.427s] DEBUG:colcon.colcon_core.verb:Building package 'obstacle_layer' with the following arguments: {'ament_cmake_args': None, 'build_base': '/gobilda_sim/ros_ws/src/obstacle_layer/build/obstacle_layer', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer', 'merge_install': False, 'path': '/gobilda_sim/ros_ws/src/obstacle_layer', 'symlink_install': False, 'test_result_base': None}
+[2.428s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[2.430s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[2.432s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/gobilda_sim/ros_ws/src/obstacle_layer' with build type 'ament_python'
+[2.432s] Level 1:colcon.colcon_core.shell:create_environment_hook('obstacle_layer', 'ament_prefix_path')
+[2.457s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[2.459s] INFO:colcon.colcon_core.shell:Creating environment hook '/gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/share/obstacle_layer/hook/ament_prefix_path.ps1'
+[2.526s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/share/obstacle_layer/hook/ament_prefix_path.dsv'
+[2.590s] INFO:colcon.colcon_core.shell:Creating environment hook '/gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/share/obstacle_layer/hook/ament_prefix_path.sh'
+[2.644s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.647s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.886s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/gobilda_sim/ros_ws/src/obstacle_layer'
+[4.895s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.896s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[9.634s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/gobilda_sim/ros_ws/src/obstacle_layer': PYTHONPATH=/gobilda_sim/ros_ws/src/obstacle_layer/build/obstacle_layer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base build/obstacle_layer build --build-base /gobilda_sim/ros_ws/src/obstacle_layer/build/obstacle_layer/build install --record /gobilda_sim/ros_ws/src/obstacle_layer/build/obstacle_layer/install.log --single-version-externally-managed install_data
+[18.394s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/gobilda_sim/ros_ws/src/obstacle_layer' returned '0': PYTHONPATH=/gobilda_sim/ros_ws/src/obstacle_layer/build/obstacle_layer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base build/obstacle_layer build --build-base /gobilda_sim/ros_ws/src/obstacle_layer/build/obstacle_layer/build install --record /gobilda_sim/ros_ws/src/obstacle_layer/build/obstacle_layer/install.log --single-version-externally-managed install_data
+[18.407s] Level 1:colcon.colcon_core.environment:checking '/gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer' for CMake module files
+[18.633s] Level 1:colcon.colcon_core.environment:checking '/gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer' for CMake config files
+[19.226s] Level 1:colcon.colcon_core.environment:checking '/gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/lib'
+[19.247s] Level 1:colcon.colcon_core.environment:checking '/gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/bin'
+[19.254s] Level 1:colcon.colcon_core.environment:checking '/gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/lib/pkgconfig/obstacle_layer.pc'
+[19.259s] Level 1:colcon.colcon_core.environment:checking '/gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/lib/python3.10/site-packages'
+[19.293s] Level 1:colcon.colcon_core.shell:create_environment_hook('obstacle_layer', 'pythonpath')
+[19.294s] INFO:colcon.colcon_core.shell:Creating environment hook '/gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/share/obstacle_layer/hook/pythonpath.ps1'
+[19.365s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/share/obstacle_layer/hook/pythonpath.dsv'
+[19.442s] INFO:colcon.colcon_core.shell:Creating environment hook '/gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/share/obstacle_layer/hook/pythonpath.sh'
+[19.516s] Level 1:colcon.colcon_core.environment:checking '/gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/bin'
+[19.519s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(obstacle_layer)
+[19.521s] INFO:colcon.colcon_core.shell:Creating package script '/gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/share/obstacle_layer/package.ps1'
+[19.561s] INFO:colcon.colcon_core.shell:Creating package descriptor '/gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/share/obstacle_layer/package.dsv'
+[19.594s] INFO:colcon.colcon_core.shell:Creating package script '/gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/share/obstacle_layer/package.sh'
+[19.650s] INFO:colcon.colcon_core.shell:Creating package script '/gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/share/obstacle_layer/package.bash'
+[19.700s] INFO:colcon.colcon_core.shell:Creating package script '/gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/share/obstacle_layer/package.zsh'
+[19.749s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/share/colcon-core/packages/obstacle_layer)
+[19.787s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[19.794s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[19.796s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[19.797s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[19.886s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[19.888s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[19.891s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[19.892s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[19.910s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.Spawn.ExecFailed: /usr/bin/dbus-launch terminated abnormally without any error message
+[19.912s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[19.915s] INFO:colcon.colcon_core.shell:Creating prefix script '/gobilda_sim/ros_ws/src/obstacle_layer/install/local_setup.ps1'
+[19.932s] INFO:colcon.colcon_core.shell:Creating prefix util module '/gobilda_sim/ros_ws/src/obstacle_layer/install/_local_setup_util_ps1.py'
+[19.950s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/gobilda_sim/ros_ws/src/obstacle_layer/install/setup.ps1'
+[20.033s] INFO:colcon.colcon_core.shell:Creating prefix script '/gobilda_sim/ros_ws/src/obstacle_layer/install/local_setup.sh'
+[20.047s] INFO:colcon.colcon_core.shell:Creating prefix util module '/gobilda_sim/ros_ws/src/obstacle_layer/install/_local_setup_util_sh.py'
+[20.069s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/gobilda_sim/ros_ws/src/obstacle_layer/install/setup.sh'
+[20.103s] INFO:colcon.colcon_core.shell:Creating prefix script '/gobilda_sim/ros_ws/src/obstacle_layer/install/local_setup.bash'
+[20.125s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/gobilda_sim/ros_ws/src/obstacle_layer/install/setup.bash'
+[20.171s] INFO:colcon.colcon_core.shell:Creating prefix script '/gobilda_sim/ros_ws/src/obstacle_layer/install/local_setup.zsh'
+[20.196s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/gobilda_sim/ros_ws/src/obstacle_layer/install/setup.zsh'

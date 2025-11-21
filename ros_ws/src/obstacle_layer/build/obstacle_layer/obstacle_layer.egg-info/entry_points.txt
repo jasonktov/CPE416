@@ -1,0 +1,3 @@
+[console_scripts]
+obstacle_layer = obstacle_layer.obstacle_layer:main
+

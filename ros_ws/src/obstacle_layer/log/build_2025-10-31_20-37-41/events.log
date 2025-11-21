@@ -1,0 +1,194 @@
+[0.000000] (-) TimerEvent: {}
+[0.002474] (obstacle_layer) JobQueued: {'identifier': 'obstacle_layer', 'dependencies': OrderedDict()}
+[0.003340] (obstacle_layer) JobStarted: {'identifier': 'obstacle_layer'}
+[0.096739] (-) TimerEvent: {}
+[0.197639] (-) TimerEvent: {}
+[0.301075] (-) TimerEvent: {}
+[0.402081] (-) TimerEvent: {}
+[0.504316] (-) TimerEvent: {}
+[0.609410] (-) TimerEvent: {}
+[0.711662] (-) TimerEvent: {}
+[0.813007] (-) TimerEvent: {}
+[0.918206] (-) TimerEvent: {}
+[1.022318] (-) TimerEvent: {}
+[1.129651] (-) TimerEvent: {}
+[1.230895] (-) TimerEvent: {}
+[1.332535] (-) TimerEvent: {}
+[1.434722] (-) TimerEvent: {}
+[1.536137] (-) TimerEvent: {}
+[1.640128] (-) TimerEvent: {}
+[1.741273] (-) TimerEvent: {}
+[1.843007] (-) TimerEvent: {}
+[1.952408] (-) TimerEvent: {}
+[2.057650] (-) TimerEvent: {}
+[2.173765] (-) TimerEvent: {}
+[2.277839] (-) TimerEvent: {}
+[2.380105] (-) TimerEvent: {}
+[2.481372] (-) TimerEvent: {}
+[2.583883] (-) TimerEvent: {}
+[2.684993] (-) TimerEvent: {}
+[2.790828] (-) TimerEvent: {}
+[2.921652] (-) TimerEvent: {}
+[3.027670] (-) TimerEvent: {}
+[3.133590] (-) TimerEvent: {}
+[3.236863] (-) TimerEvent: {}
+[3.338802] (-) TimerEvent: {}
+[3.445688] (-) TimerEvent: {}
+[3.547104] (-) TimerEvent: {}
+[3.648774] (-) TimerEvent: {}
+[3.750629] (-) TimerEvent: {}
+[3.851792] (-) TimerEvent: {}
+[3.953132] (-) TimerEvent: {}
+[4.054570] (-) TimerEvent: {}
+[4.161602] (-) TimerEvent: {}
+[4.266300] (-) TimerEvent: {}
+[4.367500] (-) TimerEvent: {}
+[4.468692] (-) TimerEvent: {}
+[4.570249] (-) TimerEvent: {}
+[4.677727] (-) TimerEvent: {}
+[4.781803] (-) TimerEvent: {}
+[4.888227] (-) TimerEvent: {}
+[4.995047] (-) TimerEvent: {}
+[5.096300] (-) TimerEvent: {}
+[5.199151] (-) TimerEvent: {}
+[5.307284] (-) TimerEvent: {}
+[5.408660] (-) TimerEvent: {}
+[5.510624] (-) TimerEvent: {}
+[5.635865] (-) TimerEvent: {}
+[5.738645] (-) TimerEvent: {}
+[5.867661] (-) TimerEvent: {}
+[5.985171] (-) TimerEvent: {}
+[6.098651] (-) TimerEvent: {}
+[6.201667] (-) TimerEvent: {}
+[6.304073] (-) TimerEvent: {}
+[6.419472] (-) TimerEvent: {}
+[6.537992] (-) TimerEvent: {}
+[6.639569] (-) TimerEvent: {}
+[6.742432] (-) TimerEvent: {}
+[6.844915] (-) TimerEvent: {}
+[6.947452] (-) TimerEvent: {}
+[7.049733] (-) TimerEvent: {}
+[7.156708] (-) TimerEvent: {}
+[7.265634] (-) TimerEvent: {}
+[7.384018] (-) TimerEvent: {}
+[7.486000] (-) TimerEvent: {}
+[7.587702] (-) TimerEvent: {}
+[7.689211] (-) TimerEvent: {}
+[7.790756] (-) TimerEvent: {}
+[7.892243] (-) TimerEvent: {}
+[7.993731] (-) TimerEvent: {}
+[8.097216] (-) TimerEvent: {}
+[8.198472] (-) TimerEvent: {}
+[8.302368] (-) TimerEvent: {}
+[8.406291] (-) TimerEvent: {}
+[8.509038] (-) TimerEvent: {}
+[8.613558] (-) TimerEvent: {}
+[8.714595] (-) TimerEvent: {}
+[8.821036] (-) TimerEvent: {}
+[8.935530] (-) TimerEvent: {}
+[9.015554] (obstacle_layer) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'egg_info', '--egg-base', 'build/obstacle_layer', 'build', '--build-base', '/gobilda_sim/ros_ws/src/obstacle_layer/build/obstacle_layer/build', 'install', '--record', '/gobilda_sim/ros_ws/src/obstacle_layer/build/obstacle_layer/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/gobilda_sim/ros_ws/src/obstacle_layer', 'env': {'HOSTNAME': '5daf7c25ba40', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/root', 'OLDPWD': '/gobilda_sim/ros_ws/src', 'ROS_PYTHON_VERSION': '3', 'COLCON_PREFIX_PATH': '/gobilda_sim/ros_ws/src/obstacle_layer/install', 'ROS_DISTRO': 'humble', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': 'novnc:0.0', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer:/opt/ros/humble', 'PWD': '/gobilda_sim/ros_ws/src/obstacle_layer/build/obstacle_layer', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/gobilda_sim/ros_ws/src/obstacle_layer/build/obstacle_layer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/lib/python3.10/site-packages:/gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1'}, 'shell': False}
+[9.094683] (-) TimerEvent: {}
+[9.196467] (-) TimerEvent: {}
+[9.298274] (-) TimerEvent: {}
+[9.412104] (-) TimerEvent: {}
+[9.520291] (-) TimerEvent: {}
+[9.635094] (-) TimerEvent: {}
+[9.743217] (-) TimerEvent: {}
+[9.846438] (-) TimerEvent: {}
+[9.949319] (-) TimerEvent: {}
+[10.051867] (-) TimerEvent: {}
+[10.156741] (-) TimerEvent: {}
+[10.261548] (-) TimerEvent: {}
+[10.375124] (-) TimerEvent: {}
+[10.476600] (-) TimerEvent: {}
+[10.580624] (-) TimerEvent: {}
+[10.689828] (-) TimerEvent: {}
+[10.791888] (-) TimerEvent: {}
+[10.896712] (-) TimerEvent: {}
+[11.002252] (-) TimerEvent: {}
+[11.112377] (-) TimerEvent: {}
+[11.213552] (-) TimerEvent: {}
+[11.320408] (-) TimerEvent: {}
+[11.424652] (-) TimerEvent: {}
+[11.528397] (-) TimerEvent: {}
+[11.629661] (-) TimerEvent: {}
+[11.730835] (-) TimerEvent: {}
+[11.835090] (-) TimerEvent: {}
+[11.936058] (-) TimerEvent: {}
+[12.039149] (-) TimerEvent: {}
+[12.146579] (-) TimerEvent: {}
+[12.248129] (-) TimerEvent: {}
+[12.350249] (-) TimerEvent: {}
+[12.455021] (-) TimerEvent: {}
+[12.557415] (-) TimerEvent: {}
+[12.633919] (obstacle_layer) StdoutLine: {'line': b'running egg_info\n'}
+[12.649626] (obstacle_layer) StdoutLine: {'line': b'writing build/obstacle_layer/obstacle_layer.egg-info/PKG-INFO\n'}
+[12.672790] (-) TimerEvent: {}
+[12.678741] (obstacle_layer) StdoutLine: {'line': b'writing dependency_links to build/obstacle_layer/obstacle_layer.egg-info/dependency_links.txt\n'}
+[12.691299] (obstacle_layer) StdoutLine: {'line': b'writing entry points to build/obstacle_layer/obstacle_layer.egg-info/entry_points.txt\n'}
+[12.703133] (obstacle_layer) StdoutLine: {'line': b'writing requirements to build/obstacle_layer/obstacle_layer.egg-info/requires.txt\n'}
+[12.718306] (obstacle_layer) StdoutLine: {'line': b'writing top-level names to build/obstacle_layer/obstacle_layer.egg-info/top_level.txt\n'}
+[12.773044] (-) TimerEvent: {}
+[12.816622] (obstacle_layer) StdoutLine: {'line': b"reading manifest file 'build/obstacle_layer/obstacle_layer.egg-info/SOURCES.txt'\n"}
+[12.873477] (-) TimerEvent: {}
+[12.974789] (-) TimerEvent: {}
+[13.082168] (-) TimerEvent: {}
+[13.097748] (obstacle_layer) StdoutLine: {'line': b"writing manifest file 'build/obstacle_layer/obstacle_layer.egg-info/SOURCES.txt'\n"}
+[13.112574] (obstacle_layer) StdoutLine: {'line': b'running build\n'}
+[13.116440] (obstacle_layer) StdoutLine: {'line': b'running build_py\n'}
+[13.166099] (obstacle_layer) StdoutLine: {'line': b'copying obstacle_layer/obstacle_layer.py -> /gobilda_sim/ros_ws/src/obstacle_layer/build/obstacle_layer/build/lib/obstacle_layer\n'}
+[13.182448] (-) TimerEvent: {}
+[13.275090] (obstacle_layer) StdoutLine: {'line': b'running install\n'}
+[13.284270] (-) TimerEvent: {}
+[13.284879] (obstacle_layer) StdoutLine: {'line': b'running install_lib\n'}
+[13.384599] (-) TimerEvent: {}
+[13.488673] (-) TimerEvent: {}
+[13.601313] (-) TimerEvent: {}
+[13.707201] (-) TimerEvent: {}
+[13.752043] (obstacle_layer) StdoutLine: {'line': b'copying /gobilda_sim/ros_ws/src/obstacle_layer/build/obstacle_layer/build/lib/obstacle_layer/obstacle_layer.py -> /gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/lib/python3.10/site-packages/obstacle_layer\n'}
+[13.821696] (-) TimerEvent: {}
+[13.924055] (-) TimerEvent: {}
+[14.025520] (-) TimerEvent: {}
+[14.031753] (obstacle_layer) StdoutLine: {'line': b'byte-compiling /gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/lib/python3.10/site-packages/obstacle_layer/obstacle_layer.py to obstacle_layer.cpython-310.pyc\n'}
+[14.125907] (-) TimerEvent: {}
+[14.228144] (-) TimerEvent: {}
+[14.234844] (obstacle_layer) StdoutLine: {'line': b'running install_data\n'}
+[14.322456] (obstacle_layer) StdoutLine: {'line': b'running install_egg_info\n'}
+[14.328574] (-) TimerEvent: {}
+[14.374187] (obstacle_layer) StdoutLine: {'line': b"removing '/gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/lib/python3.10/site-packages/obstacle_layer-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[14.432224] (-) TimerEvent: {}
+[14.533633] (-) TimerEvent: {}
+[14.658790] (-) TimerEvent: {}
+[14.774468] (-) TimerEvent: {}
+[14.883361] (-) TimerEvent: {}
+[14.896723] (obstacle_layer) StdoutLine: {'line': b'Copying build/obstacle_layer/obstacle_layer.egg-info to /gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/lib/python3.10/site-packages/obstacle_layer-0.0.0-py3.10.egg-info\n'}
+[14.983635] (-) TimerEvent: {}
+[15.084799] (-) TimerEvent: {}
+[15.185918] (-) TimerEvent: {}
+[15.301725] (-) TimerEvent: {}
+[15.402736] (-) TimerEvent: {}
+[15.506382] (-) TimerEvent: {}
+[15.607388] (-) TimerEvent: {}
+[15.708531] (-) TimerEvent: {}
+[15.792397] (obstacle_layer) StdoutLine: {'line': b'running install_scripts\n'}
+[15.809838] (-) TimerEvent: {}
+[15.911103] (-) TimerEvent: {}
+[16.014779] (-) TimerEvent: {}
+[16.083608] (obstacle_layer) StdoutLine: {'line': b'Installing obstacle_layer script to /gobilda_sim/ros_ws/src/obstacle_layer/install/obstacle_layer/lib/obstacle_layer\n'}
+[16.116838] (-) TimerEvent: {}
+[16.130582] (obstacle_layer) StdoutLine: {'line': b"writing list of installed files to '/gobilda_sim/ros_ws/src/obstacle_layer/build/obstacle_layer/install.log'\n"}
+[16.217486] (-) TimerEvent: {}
+[16.221556] (obstacle_layer) CommandEnded: {'returncode': 0}
+[16.317760] (-) TimerEvent: {}
+[16.424256] (-) TimerEvent: {}
+[16.528391] (-) TimerEvent: {}
+[16.629631] (-) TimerEvent: {}
+[16.732237] (-) TimerEvent: {}
+[16.833814] (-) TimerEvent: {}
+[16.937639] (-) TimerEvent: {}
+[17.038699] (-) TimerEvent: {}
+[17.139764] (-) TimerEvent: {}
+[17.241161] (-) TimerEvent: {}
+[17.342506] (-) TimerEvent: {}
+[17.354312] (obstacle_layer) JobEnded: {'identifier': 'obstacle_layer', 'rc': 0}
+[17.399922] (-) EventReactorShutdown: {}
