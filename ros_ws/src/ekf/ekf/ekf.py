@@ -155,11 +155,7 @@ class Filter(Node):
         #predict state
         #self.get_logger().info("predicting")
         w = -1 * imu.angular_velocity.x
-        theta_pred = self.state[2][0] * w * dt
-        if(theta_pred > math.pi):
-            theta_pred = theta_pred - (2 * math.pi)
-        if(theta_pred < -1 * math.pi):
-            theta_pred = theta_pred + (2 * math.pi)
+        theta_pred = math.atan2(math.sin(self.state[2][0] + w * dt), math.cos(self.state[2][0] + w * dt))
         self.state[2][0] = theta_pred
 
         #predict covariance
@@ -181,6 +177,8 @@ class Filter(Node):
 
         K = self.cov @ np.linalg.inv(self.cov + R)
         self.state = self.state + K @ (Z - self.state)
+        theta_correct = math.atan2(math.sin(self.state[2][0]), math.cos(self.state[2][0]))
+        self.state[2][0] = theta_correct
         self.cov = (np.eye(3) - K) @ self.cov
 
 def main(args=None):
