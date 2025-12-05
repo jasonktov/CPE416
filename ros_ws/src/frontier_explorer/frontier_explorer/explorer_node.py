@@ -160,8 +160,12 @@ class Explorer(Node):
         self.group_frontiers(self.frontier_map)
         self.map_publisher.publish(self.frontier_map)
 
+        cur_pose = PoseStamped()
+        cur_pose.header = self.cur_odom.header
+        cur_pose.pose = self.cur_odom.pose.pose
+
         transformed_pose = self.tf_buffer.transform(
-                self.cur_odom,
+                cur_pose,
                 self.frontier_map.header.frame_id,
                 rclpy.time.Duration(seconds=0.2)
             )
