@@ -8,46 +8,7 @@ import numpy as np
 
 from nav_msgs.msg import OccupancyGrid
 from geometry_msgs.msg import PoseStamped
-
-
-def euler_from_quaternion(orientation):
-    """
-    Convert a quaternion into euler angles (roll, pitch, yaw)
-    roll is rotation around x in radians (counterclockwise)
-    pitch is rotation around y in radians (counterclockwise)
-    yaw is rotation around z in radians (counterclockwise)
-    """
-    x = orientation.x
-    y = orientation.y
-    z = orientation.z
-    w = orientation.w
-
-    t0 = +2.0 * (w * x + y * z)
-    t1 = +1.0 - 2.0 * (x * x + y * y)
-    roll_x = math.atan2(t0, t1)
-
-    t2 = +2.0 * (w * y - z * x)
-    t2 = +1.0 if t2 > +1.0 else t2
-    t2 = -1.0 if t2 < -1.0 else t2
-    pitch_y = math.asin(t2)
-
-    t3 = +2.0 * (w * z + x * y)
-    t4 = +1.0 - 2.0 * (y * y + z * z)
-    yaw_z = math.atan2(t3, t4)
-
-    return yaw_z  # in radians
-
-def euler_to_quaternion(roll, pitch, yaw):
-    qx = np.sin(roll / 2) * np.cos(pitch / 2) * np.cos(yaw / 2) - np.cos(roll / 2) * np.sin(pitch / 2) * np.sin(
-        yaw / 2)
-    qy = np.cos(roll / 2) * np.sin(pitch / 2) * np.cos(yaw / 2) + np.sin(roll / 2) * np.cos(pitch / 2) * np.sin(
-        yaw / 2)
-    qz = np.cos(roll / 2) * np.cos(pitch / 2) * np.sin(yaw / 2) - np.sin(roll / 2) * np.sin(pitch / 2) * np.cos(
-        yaw / 2)
-    qw = np.cos(roll / 2) * np.cos(pitch / 2) * np.cos(yaw / 2) + np.sin(roll / 2) * np.sin(pitch / 2) * np.sin(
-        yaw / 2)
-
-    return [qx, qy, qz, qw]
+from nav_msgs.msg import Odometry
 
 # Object orientated nodes for ROS in python
 class Explorer(Node):
@@ -57,6 +18,13 @@ class Explorer(Node):
         # 'ros2 node list'
         super().__init__('explorer_node')
         self.odom_subscription = self.create_subscription(
+            Odometry,
+            '/rtabmap/odom',
+            self.odom_callback,
+            10
+        )
+
+        self.map_subscription = self.create_subscription(
             OccupancyGrid,
             'map',
             self.map_callback,
@@ -75,13 +43,18 @@ class Explorer(Node):
 
         self.cur_map = None
         self.frontier_map = None
-        self.groups = [[0]] * 100
+        self.cur_odom = None
 
-        timer_period = 0.05 # seconds
+        self.groups = [[0]] * 255
+
+        timer_period = 0.50 # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
 
     def map_callback(self, msg):
         self.cur_map = msg
+
+    def odom_callback(self, msg):
+        self.cur_odom = msg
 
     # Callback for the events
     def timer_callback(self):
@@ -95,6 +68,7 @@ class Explorer(Node):
 
         self.frontier_map = OccupancyGrid()
         self.frontier_map = self.explore(self.cur_map, self.frontier_map)
+        self.group_frontiers(self.frontier_map)
         self.map_publisher.publish(self.frontier_map)
 
     def explore(self, map:OccupancyGrid, frontier_map:OccupancyGrid):
@@ -110,7 +84,7 @@ class Explorer(Node):
         for i in range(width*height):
             if(map_array[i] == 0):
                 if(self.check_neighbors(i,  map)):
-                    frontier_map.data[i] = 100 #cell is frontier
+                    frontier_map.data[i] = 0 #cell is frontier
 
         return frontier_map
 
@@ -128,6 +102,34 @@ class Explorer(Node):
                 return True
         return False
 
+    def group_frontiers(self, frontier_map:OccupancyGrid):
+        width = frontier_map.info.width
+        height = frontier_map.info.height
+        map_array = frontier_map.data
+
+        cur_group = 0
+
+        for i in range(width * height):
+            if (map_array[i] == 0):
+                cur_group = cur_group + 1
+                self.expand(frontier_map, i, cur_group)
+
+        self.get_logger().info(f"# of groups : {len(self.groups)}")
+        return frontier_map
+
+    def expand(self, frontier_map, i, group):
+        width = frontier_map.info.width
+        frontier_map_array = frontier_map.data
+
+        neighbor_is = [i - width - 1, i - width, i - width + 1,
+                       i - 1, i + 1,
+                       i + width - 1, i + width, i + width + 1]
+
+        frontier_map_array[i] = group
+        self.groups[group].append(i)
+        for index in neighbor_is:
+            if(frontier_map_array[index] == 0):
+                self.expand(frontier_map, index, group)
 
 def main(args=None):
     rclpy.init(args=args)
