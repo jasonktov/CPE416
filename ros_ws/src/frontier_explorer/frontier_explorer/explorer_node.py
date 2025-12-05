@@ -46,6 +46,7 @@ class Explorer(Node):
         self.cur_odom = None
 
         self.groups = [[] for _ in range(255)]
+        self.num_groups = 0;
 
         timer_period = 0.50 # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
@@ -91,6 +92,7 @@ class Explorer(Node):
     def check_neighbors(self, i, map: OccupancyGrid):
         #returns whether or not the cell is a frontier cell
         width = map.info.width
+        height = map.info.height
         map_array = map.data
 
         neighbor_is = [i - width - 1, i - width, i - width + 1,
@@ -98,8 +100,9 @@ class Explorer(Node):
                        i + width - 1, i + width, i + width + 1]
 
         for index in neighbor_is:
-            if(map_array[index] == -1):
-                return True
+            if(index > 0 and index < width * height):
+                if(map_array[index] == -1): 
+                    return True
         return False
 
     def group_frontiers(self, frontier_map:OccupancyGrid):
@@ -107,32 +110,35 @@ class Explorer(Node):
         height = frontier_map.info.height
         frontier_map_array = frontier_map.data
 
-        cur_group = 0
+        self.groups = [[] for _ in range(255)]
+        self.num_groups = 0
 
         for i in range(width * height):
             if (frontier_map_array[i] == 0):
-                cur_group = cur_group + 1
-                if(cur_group < len(self.groups)):
-                    self.expand(frontier_map, i, cur_group)
+                self.num_groups = self.num_groups + 1
+                if(self.num_groups < len(self.groups)):
+                    self.expand(frontier_map, i, self.num_groups, 0)
 
-        self.get_logger().info(f"# of groups : {len(self.groups)}")
+        self.get_logger().info(f"# of groups : {self.num_groups}")
         return frontier_map
 
-    def expand(self, frontier_map, i, group):
-        width = frontier_map.info.width
+    def expand(self, frontier_map, i, group, depth):
+        width= frontier_map.info.width
         frontier_map_array = frontier_map.data
 
         neighbor_is = [i - width - 1, i - width, i - width + 1,
                        i - 1, i + 1,
                        i + width - 1, i + width, i + width + 1]
 
-        self.get_logger().info(f"i: {i}")
-        frontier_map_array[i] = group
-        self.groups[group].append(i)
+        #self.get_logger().info(f"depth: {depth}")
+        frontier_map_array[i] = (group % 127) + 1
+        self.groups[group].insert(group, i)
+        if(depth > 900):
+            return
         for index in neighbor_is:
             if(index > 0 and index < len(frontier_map_array)):
                 if(frontier_map_array[index] == 0):
-                    self.expand(frontier_map, index, group)
+                    self.expand(frontier_map, index, group, depth + 1)
 
 def main(args=None):
     rclpy.init(args=args)
