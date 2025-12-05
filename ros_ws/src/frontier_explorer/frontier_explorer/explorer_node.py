@@ -85,6 +85,9 @@ class Explorer(Node):
 
     # Callback for the events
     def timer_callback(self):
+        if(self.cur_map is None):
+            return
+
         goal = PoseStamped()
         goal.header.stamp = self.get_clock().now().to_msg()
         goal.header.frame_id = 'diff_drive/base_link'
@@ -111,7 +114,7 @@ class Explorer(Node):
 
         return frontier_map
 
-    def check_neighors(self, i, map: OccupancyGrid):
+    def check_neighbors(self, i, map: OccupancyGrid):
         #returns whether or not the cell is a frontier cell
         width = map.info.width
         map_array = map.data
