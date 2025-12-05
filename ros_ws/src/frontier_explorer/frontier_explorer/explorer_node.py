@@ -7,15 +7,16 @@ import math
 import numpy as np
 
 from nav_msgs.msg import OccupancyGrid
+from geometry_msgs.msg import Pose
 from geometry_msgs.msg import PoseStamped
 from nav_msgs.msg import Odometry
 from tf2_ros import Buffer, TransformListener, TransformException
 from tf2_geometry_msgs import do_transform_pose
 from rclpy.duration import Duration
 
-def world_to_cell(pose_grid: PoseStamped, grid: OccupancyGrid):
-    x_world = pose_grid.pose.position.x
-    y_world = pose_grid.pose.position.y
+def world_to_cell(pose_grid: Pose, grid: OccupancyGrid):
+    x_world = pose_grid.position.x
+    y_world = pose_grid.position.y
 
     origin = grid.info.origin
     x0 = origin.position.x
@@ -155,7 +156,7 @@ class Explorer(Node):
 
     # Callback for the events
     def timer_callback(self):
-        if(self.cur_map is None):
+        if(self.cur_map is None or self.cur_odom is None):
             return
         self.frontier_map = OccupancyGrid()
         self.frontier_map = self.explore(self.cur_map, self.frontier_map)
@@ -173,7 +174,7 @@ class Explorer(Node):
             timeout = Duration(seconds = 0.2)
         )
 
-        transformed_pose = do_transform_pose(cur_pose, transform)
+        transformed_pose = do_transform_pose(cur_pose.pose, transform)
 
         bot_i = world_to_cell(transformed_pose, self.frontier_map)
         goal_i = self.select_basic(self.frontier_map, bot_i)
