@@ -11,6 +11,7 @@ from geometry_msgs.msg import PoseStamped
 from nav_msgs.msg import Odometry
 from tf2_ros import Buffer, TransformListener, TransformException
 from tf2_geometry_msgs import do_transform_pose
+from rclpy.duration import Duration
 
 def world_to_cell(pose_grid: PoseStamped, grid: OccupancyGrid):
     x_world = pose_grid.pose.position.x
@@ -169,7 +170,7 @@ class Explorer(Node):
             self.frontier_map.header.frame_id,  # target
             cur_pose.header.frame_id,  # source ("odom")
             rclpy.time.Time(),  # latest available
-            1
+            timeout = Duration(seconds = 0.2)
         )
 
         transformed_pose = do_transform_pose(cur_pose, transform)
