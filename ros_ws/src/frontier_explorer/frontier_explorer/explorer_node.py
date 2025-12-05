@@ -45,7 +45,7 @@ class Explorer(Node):
         self.frontier_map = None
         self.cur_odom = None
 
-        self.groups = [[0]] * 255
+        self.groups = [[] for _ in range(255)]
 
         timer_period = 0.50 # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
@@ -105,14 +105,15 @@ class Explorer(Node):
     def group_frontiers(self, frontier_map:OccupancyGrid):
         width = frontier_map.info.width
         height = frontier_map.info.height
-        map_array = frontier_map.data
+        frontier_map_array = frontier_map.data
 
         cur_group = 0
 
         for i in range(width * height):
-            if (map_array[i] == 0):
+            if (frontier_map_array[i] == 0):
                 cur_group = cur_group + 1
-                self.expand(frontier_map, i, cur_group)
+                if(cur_group < len(self.groups)):
+                    self.expand(frontier_map, i, cur_group)
 
         self.get_logger().info(f"# of groups : {len(self.groups)}")
         return frontier_map
@@ -125,11 +126,13 @@ class Explorer(Node):
                        i - 1, i + 1,
                        i + width - 1, i + width, i + width + 1]
 
+        self.get_logger().info(f"i: {i}")
         frontier_map_array[i] = group
         self.groups[group].append(i)
         for index in neighbor_is:
-            if(frontier_map_array[index] == 0):
-                self.expand(frontier_map, index, group)
+            if(index > 0 and index < len(frontier_map_array)):
+                if(frontier_map_array[index] == 0):
+                    self.expand(frontier_map, index, group)
 
 def main(args=None):
     rclpy.init(args=args)
