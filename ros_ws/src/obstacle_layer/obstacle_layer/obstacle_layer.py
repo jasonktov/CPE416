@@ -8,6 +8,7 @@ from nav_msgs.msg import OccupancyGrid
 from geometry_msgs.msg import Pose, Point, Quaternion
 
 
+
 class LocalCostmap(Node):
     def __init__(self):
         super().__init__('local_costmap')
