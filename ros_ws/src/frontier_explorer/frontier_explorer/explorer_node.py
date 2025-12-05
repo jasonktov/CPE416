@@ -10,6 +10,7 @@ from nav_msgs.msg import OccupancyGrid
 from geometry_msgs.msg import PoseStamped
 from nav_msgs.msg import Odometry
 from tf2_ros import Buffer, TransformListener, TransformException
+from tf2_geometry_msgs import do_transform_pose
 
 def world_to_cell(pose_grid: PoseStamped, grid: OccupancyGrid):
     x_world = pose_grid.pose.position.x
@@ -164,11 +165,15 @@ class Explorer(Node):
         cur_pose.header = self.cur_odom.header
         cur_pose.pose = self.cur_odom.pose.pose
 
-        transformed_pose = self.tf_buffer.transform(
-                cur_pose,
-                self.frontier_map.header.frame_id,
-                rclpy.time.Duration(seconds=0.2)
-            )
+        transform = self.tf_buffer.lookup_transform(
+            self.frontier_map.header.frame_id,  # target
+            cur_pose.header.frame_id,  # source ("odom")
+            rclpy.time.Time(),  # latest available
+            1
+        )
+
+        transformed_pose = do_transform_pose(cur_pose, transform)
+
         bot_i = world_to_cell(transformed_pose, self.frontier_map)
         goal_i = self.select_basic(self.frontier_map, bot_i)
 
