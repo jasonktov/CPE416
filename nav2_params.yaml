@@ -1,0 +1,134 @@
+
+amcl:                  #saved static map
+  ros__parameters:     
+    enabled: false     # SLAM replaces AMCL #we don't need it bacause we will constantly be updating it
+    use_sim_time: false # real time?
+
+map_server:             #load the map file(save map)
+  ros__parameters:
+    enabled: false     # SLAM provides /map #so we disable it/false since are map will be live
+    use_sim_time: false
+                       #   ----- Bottom line we are replacing both AMCL and map_server cause we doing it live ------
+
+
+                  #--------- how we plan a path on the map --------
+planner_server:         #global path from start to goal
+  ros__parameters:
+    use_sim_time: false
+    planner_plugins: ["GridBased"]    #load in planner?
+    GridBased:
+      plugin: "nav2_navfn_planner/NavfnPlanner"
+      tolerance: 0.5     #the goal can be reached within 0.5 m of the target pose
+      allow_unknown: true  #allows the path to go through the unknown areas
+
+controller_server:        #takes the global path and turns it into /cmd_vel
+  ros__parameters:    
+    use_sim_time: false   
+    controller_plugins: ["FollowPath"]     #list of local planners. We load "FollowPath"
+    FollowPath:
+      plugin: "dwb_core::DWBLocalPlanner"    # a common differential-drive local planner
+
+      # ----- EDIT FOR ROBOT SPEEDS -----
+      max_vel_x: 0.4        #forward speed (m/s)
+      min_vel_x: 0.0        
+      max_vel_theta: 1.0    #rotational speed (rad/s)
+      min_vel_theta: 0.0
+      acc_lim_x: 0.5        #linear acceleration
+      acc_lim_theta: 2.0    #max angular acceleration
+      # ------------------------------------------------
+
+      critics: ["GoalAlign", "PathAlign", "PathDist", "GoalDist", "ObstacleFootprint"]
+#GoalAlign/GoalDist: try to point toward/ get closer to the goal
+#PathAlign/PathDist: stick to the global path
+#ObstacleFootprint: don't hit obstacles
+
+
+global_costmap:       #big map for global planning
+  ros__parameters:
+    use_sim_time: false
+    global_frame: map     #everything is expressed in the /map frame
+    robot_base_frame: base_link   #robot main frame; must match TF
+    track_unknown_space: true     #keeps unknown areas
+    rolling_window: false         #covers the whole known map, not just around the robot
+    resolution: 0.05            #5 cm per cell
+    robot_radius: 0.20           #radius of your robot(meters)
+
+    plugins: ["static_layer", "obstacle_layer", "inflation_layer"]
+#static_layer: the base map
+#obstacle_layer: obstacles detected
+#inflation_layer: obstacles to keep a safety buffer
+
+    static_layer:
+      plugin: "nav2_costmap_2d::StaticLayer"
+      map_subscribe_transient_local: true     #ensures costmap gets the map even if it started a bit late
+
+    obstacle_layer:
+      plugin: "nav2_costmap_2d::ObstacleLayer"
+      observation_sources: scan   #name the source scan
+      scan:
+        topic: scan         # <---- change this if your LiDAR topic is different
+        max_obstacle_height: 2.0    #anything taller than this is ignored
+        marking: true               #add obstacles where we see them
+        clearing: true              #clear obstacles where the ray passes through open space
+
+    inflation_layer:
+      plugin: "nav2_costmap_2d::InflationLayer"
+      inflation_radius: 0.5         #how far around obstacles we create "danger cost"
+      cost_scaling_factor: 3.0      #how the cost rises near obstacles
+                            #------- how the robot see's the world/obstacles for planning --------
+
+
+local_costmap:                      #smaller map centerd on the robot, used for local obstacle avoidance
+  ros__parameters:      
+    use_sim_time: false
+    global_frame: odom              #local planning works in the odometry frame
+    robot_base_frame: base_link     
+    rolling_window: true            #the costmap moves with the robot
+    width: 3.0                      #window around the robot
+    height: 3.0                     #window around the robot
+    resolution: 0.05
+    robot_radius: 0.20
+
+    plugins: ["obstacle_layer", "inflation_layer"]   
+
+    obstacle_layer:
+      plugin: "nav2_costmap_2d::ObstacleLayer"
+      observation_sources: scan
+      scan:
+        topic: scan         # <---- change if needed
+        max_obstacle_height: 2.0
+        marking: true
+        clearing: true
+                        #---------- uses /scan to detect close obstacles ----------
+
+
+    inflation_layer:
+      plugin: "nav2_costmap_2d::InflationLayer"
+      inflation_radius: 0.5
+      cost_scaling_factor: 3.0
+
+bt_navigator:          #runs a Behavior Tree, which is like the "brain script" for navigation
+  ros__parameters:
+    use_sim_time: false
+    global_frame: map
+    robot_base_frame: base_link
+
+waypoint_follower:            
+  ros__parameters:
+    use_sim_time: false
+         #-------- lets you send multiple waypoints in sequence and enable it with default setting--------
+
+
+lifecycle_manager:
+  ros__parameters:
+    use_sim_time: false
+    autostart: true
+    node_names:
+      - controller_server
+      - planner_server
+      - bt_navigator
+      - waypoint_follower
+        #Nav2 nodes are lifecycle nodes
+        #autostart: true -> automatically configure + activate these nodes at launch
+        #node names: -> which Nav2 components to manage
+                #------- Without this, you'd have to manually activate each node --------
