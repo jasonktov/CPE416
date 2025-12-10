@@ -318,8 +318,11 @@ class Explorer(Node):
 
                 dist = math.sqrt(((index_x - bot_x) ** 2) + ((index_y - bot_y) ** 2))
 
-                heapq.heappush(self.goal_cells, (dist, index))
-        return self.goal_cells[0][1]
+                if(shortest_index is None or shortest_dist > dist):
+                    shortest_dist = dist
+                    shortest_index = index
+                #heapq.heappush(self.goal_cells, (dist, index))
+        return shortest_index
 
     def select_advanced(self, frontier_map:OccupancyGrid, groups, bot_i):
         width = frontier_map.info.width
