@@ -151,6 +151,7 @@ class Explorer(Node):
         self.num_groups = 0
 
         self.goal_cells = []
+        self.cur_goal_cells_i = 0;
 
         timer_period = 5 # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
@@ -184,8 +185,10 @@ class Explorer(Node):
         transformed_pose = do_transform_pose(cur_pose.pose, transform)
 
         bot_i = world_to_cell(transformed_pose, self.frontier_map)
-        goal_i = self.select_basic(self.frontier_map, bot_i)
+        self.select_advanced(self.frontier_map, self.groups, bot_i)
+        self.send_goal(self.goal_cells[self.cur_goal_cells_i][1])
 
+    def send_goal(self, goal_i):
         goal = cell_index_to_world_pose(goal_i, self.frontier_map, self.get_clock().now().to_msg())
         self.goal_publisher.publish(goal)
 
@@ -229,6 +232,10 @@ class Explorer(Node):
         }.get(status, "INVALID_STATUS")
 
         self.get_logger().info(f"Navigation finished with status {status} ({status_text})")
+        if status == GoalStatus.STATUS_ABORTED:
+            self.cur_goal_cells_i += 1
+            self.send_goal(self.goal_cells[self.cur_goal_cells_i])
+
 
     def feedback_callback(self, feedback_msg):
         feedback = feedback_msg.feedback
@@ -360,9 +367,11 @@ class Explorer(Node):
             center_y = y_sum.group_size
             center_dist = math.sqrt(((center_x - bot_x) ** 2) + ((center_y - bot_y) ** 2))
 
-            if (closest_edge_index is None or center_dist < shortest_center_dist):
-                closest_edge_index = closest_edge
-                shortest_center_dist = center_dist
+            self.cur_goal_cells_i = 0
+            heapq.heappush(self.goal_cells, (center_dist, closest_edge_index))
+            #if (closest_edge_index is None or center_dist < shortest_center_dist):
+                #closest_edge_index = closest_edge
+                #shortest_center_dist = center_dist
         return closest_edge_index
 
 def main(args=None):
