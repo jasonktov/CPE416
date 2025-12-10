@@ -188,8 +188,11 @@ class Explorer(Node):
         self.goal_publisher.publish(goal)
 
         self._client.wait_for_server()
+        goal_msg = NavigateToPose.Goal()
+        goal_msg.pose = goal
+
         send_goal_future = self._client.send_goal_async(
-            goal,
+            goal_msg,
             feedback_callback=self.feedback_callback
         )
         send_goal_future.add_done_callback(self.goal_response_callback)
