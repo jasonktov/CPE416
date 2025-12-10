@@ -20,7 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'frontier_explorer = frontier_explorer.explorer_node:main'
+            'frontier_explorer = frontier_explorer.explorer_node:main',
             'echo_node = frontier_explorer.echo_node:main'
         ],
     },
