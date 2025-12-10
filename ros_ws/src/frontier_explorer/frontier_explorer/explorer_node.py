@@ -2,10 +2,8 @@ import rclpy
 from rclpy.node import Node
 from rclpy.action import ActionClient
 
-from queue import Queue
-
+import heapq
 import math
-import numpy as np
 
 from nav_msgs.msg import OccupancyGrid
 from geometry_msgs.msg import Pose
@@ -15,6 +13,8 @@ from tf2_ros import Buffer, TransformListener, TransformException
 from tf2_geometry_msgs import do_transform_pose
 from rclpy.duration import Duration
 from nav2_msgs.action import NavigateToPose
+
+from action_msgs.msg import GoalStatus
 
 
 def world_to_cell(pose_grid: Pose, grid: OccupancyGrid):
@@ -150,6 +150,8 @@ class Explorer(Node):
         self.groups = [[] for _ in range(255)]
         self.num_groups = 0
 
+        self.goal_cells = []
+
         timer_period = 5 # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
 
@@ -210,17 +212,26 @@ class Explorer(Node):
         get_result_future.add_done_callback(self.result_callback)
 
     def result_callback(self, future):
-        result = future.result().result
-        self.get_logger().info(f"Result: {result}")
-        rclpy.shutdown()
+        # Action result future
+        result_msg = future.result()
+        status = result_msg.status  # numeric GoalStatus code
+        result = result_msg.result  # NavigateToPose_Result
+
+        # Convert numeric status → readable string
+        status_text = {
+            GoalStatus.STATUS_UNKNOWN: "UNKNOWN",
+            GoalStatus.STATUS_ACCEPTED: "ACCEPTED",
+            GoalStatus.STATUS_EXECUTING: "EXECUTING",
+            GoalStatus.STATUS_CANCELING: "CANCELING",
+            GoalStatus.STATUS_SUCCEEDED: "SUCCEEDED",
+            GoalStatus.STATUS_CANCELED: "CANCELED",
+            GoalStatus.STATUS_ABORTED: "ABORTED",
+        }.get(status, "INVALID_STATUS")
+
+        self.get_logger().info(f"Navigation finished with status {status} ({status_text})")
 
     def feedback_callback(self, feedback_msg):
         feedback = feedback_msg.feedback
-        self.get_logger().info(
-            f"Current pose: {feedback.current_pose.pose.position.x:.2f}, "
-            f"{feedback.current_pose.pose.position.y:.2f}"
-        )
-        
 
     def explore(self, map:OccupancyGrid, frontier_map:OccupancyGrid):
         width = map.info.width
@@ -307,13 +318,8 @@ class Explorer(Node):
 
                 dist = math.sqrt(((index_x - bot_x) ** 2) + ((index_y - bot_y) ** 2))
 
-                if(shortest_index is None):
-                    shortest_index = index
-                    shortest_dist = dist
-                elif(dist < shortest_dist):
-                    shortest_index = index
-                    shortest_dist = dist
-        return shortest_index
+                heapq.heappush(self.goal_cells, (dist, index))
+        return self.goal_cells
 
     def select_advanced(self, frontier_map:OccupancyGrid, groups, bot_i):
         width = frontier_map.info.width
