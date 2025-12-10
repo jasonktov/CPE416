@@ -14,10 +14,10 @@ class Echoer(Node):
         # Arguments include the type of message, the name of the topic,
         # and the queue size
         self.publisher_ = self.create_publisher(TwistStamped, '/gobilda/cmd_vel', 10)
-        self.subscriber_ = self.create_subscriber(Twist, 'cmd_vel', self.listener_callback, 10)
+        self.subscriber_ = self.create_subscription(Twist, 'cmd_vel', self.listener_callback, 10)
 
     def listener_callback(self, msg):
-        out = TwistStamped
+        out = TwistStamped()
         out.header.stamp = self.get_clock().now().to_msg()
         out.header.frame_id = 'base_link'
         out.twist = msg
