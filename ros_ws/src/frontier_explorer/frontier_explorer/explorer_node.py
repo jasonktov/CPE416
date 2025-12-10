@@ -1,5 +1,6 @@
 import rclpy
 from rclpy.node import Node
+from rclpy.action import ActionClient
 
 from queue import Queue
 
@@ -12,6 +13,8 @@ from nav_msgs.msg import Odometry
 from tf2_ros import Buffer, TransformListener, TransformException
 from tf2_geometry_msgs import do_transform_pose
 from rclpy.duration import Duration
+from nav2_msgs.action import NavigateToPose
+
 
 def world_to_cell(pose_grid: PoseStamped, grid: OccupancyGrid):
     x_world = pose_grid.pose.position.x
@@ -134,6 +137,8 @@ class Explorer(Node):
             10
         )
 
+        self._client = ActionClient(self, NavigateToPose, 'navigate_to_pose')
+
         self.tf_buffer = Buffer()
         self.tf_listener = TransformListener(self.tf_buffer, self)
 
@@ -144,7 +149,7 @@ class Explorer(Node):
         self.groups = [[] for _ in range(255)]
         self.num_groups = 0
 
-        timer_period = 0.50 # seconds
+        timer_period = 5 # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
 
     def map_callback(self, msg):
@@ -180,6 +185,37 @@ class Explorer(Node):
 
         goal = cell_index_to_world_pose(goal_i, self.frontier_map, self.get_clock().now().to_msg())
         self.goal_publisher.publish(goal)
+
+        self._client.wait_for_server()
+        send_goal_future = self._client.send_goal_async(
+            goal,
+            feedback_callback=self.feedback_callback
+        )
+        send_goal_future.add_done_callback(self.goal_response_callback)
+
+    def goal_response_callback(self, future):
+        goal_handle = future.result()
+
+        if not goal_handle.accepted:
+            self.get_logger().info('Goal rejected')
+            return
+
+        self.get_logger().info('Goal accepted')
+
+        get_result_future = goal_handle.get_result_async()
+        get_result_future.add_done_callback(self.result_callback)
+
+    def result_callback(self, future):
+        result = future.result().result
+        self.get_logger().info(f"Result: {result}")
+        rclpy.shutdown()
+
+    def feedback_callback(self, feedback_msg):
+        feedback = feedback_msg.feedback
+        self.get_logger().info(
+            f"Current pose: {feedback.current_pose.pose.position.x:.2f}, "
+            f"{feedback.current_pose.pose.position.y:.2f}"
+        )
         
 
     def explore(self, map:OccupancyGrid, frontier_map:OccupancyGrid):
@@ -274,6 +310,47 @@ class Explorer(Node):
                     shortest_index = index
                     shortest_dist = dist
         return shortest_index
+
+    def select_advanced(self, frontier_map:OccupancyGrid, groups, bot_i):
+        width = frontier_map.info.width
+        frontier_map_array = frontier_map.data
+
+        shortest_center_dist = 100000
+        closest_edge_index = None
+
+        bot_x = bot_i % width
+        bot_y = math.floor(bot_i / width)
+
+        for group in groups:
+            #get group size & center node
+            group_size = 0
+            x_sum = 0
+            y_sum = 0
+            closest_edge = None
+            shortest_edge_dist = 100000
+
+            for cell_i in group:
+                group_size += 1
+                x_sum += cell_i % width
+                y_sum += math.floor(cell_i / width)
+
+                index_x = cell_i % width
+                index_y = math.floor(cell_i / width)
+
+                edge_dist = math.sqrt(((index_x - bot_x) ** 2) + ((index_y - bot_y) ** 2))
+
+                if(closest_edge is None or edge_dist < shortest_edge_dist):
+                    closest_edge = cell_i
+                    shortest_edge_dist = edge_dist
+
+            center_x = x_sum/group_size
+            center_y = y_sum.group_size
+            center_dist = math.sqrt(((center_x - bot_x) ** 2) + ((center_y - bot_y) ** 2))
+
+            if (closest_edge_index is None or center_dist < shortest_center_dist):
+                closest_edge_index = closest_edge
+                shortest_center_dist = center_dist
+        return closest_edge_index
 
 def main(args=None):
     rclpy.init(args=args)
