@@ -341,7 +341,9 @@ class Explorer(Node):
         bot_x = bot_i % width
         bot_y = math.floor(bot_i / width)
 
+
         for group in groups:
+            self.get_logger().info(f"looking at group {group}")
             #get group size & center node
             group_size = 0
             x_sum = 0
@@ -363,12 +365,13 @@ class Explorer(Node):
                     closest_edge = cell_i
                     shortest_edge_dist = edge_dist
 
-            center_x = x_sum/group_size
-            center_y = y_sum.group_size
-            center_dist = math.sqrt(((center_x - bot_x) ** 2) + ((center_y - bot_y) ** 2))
+            if(group_size > 0):
+                center_x = x_sum/group_size
+                center_y = y_sum.group_size
+                center_dist = math.sqrt(((center_x - bot_x) ** 2) + ((center_y - bot_y) ** 2))
 
-            self.cur_goal_cells_i = 0
-            heapq.heappush(self.goal_cells, (center_dist, closest_edge_index))
+                self.cur_goal_cells_i = 0
+                heapq.heappush(self.goal_cells, (center_dist, closest_edge_index))
             #if (closest_edge_index is None or center_dist < shortest_center_dist):
                 #closest_edge_index = closest_edge
                 #shortest_center_dist = center_dist
