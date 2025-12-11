@@ -242,6 +242,7 @@ class Explorer(Node):
         #create frontier map
         self.frontier_map = OccupancyGrid()
         self.create_frontier(self.cur_map)
+        self.get_logger().info(f"{len(self.frontier_cells)} frontier cells")
         self.group_frontiers()
         self.get_logger().info(f"{len(self.groups)} groups")
         self.recolor_frontier_map()
