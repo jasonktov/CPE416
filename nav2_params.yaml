@@ -24,6 +24,7 @@ planner_server:         #global path from start to goal
 controller_server:        #takes the global path and turns it into /cmd_vel
   ros__parameters:    
     use_sim_time: false   
+    controller_frequency = 5.0
     controller_plugins: ["FollowPath"]     #list of local planners. We load "FollowPath"
     FollowPath:
       plugin: "dwb_core::DWBLocalPlanner"    # a common differential-drive local planner
