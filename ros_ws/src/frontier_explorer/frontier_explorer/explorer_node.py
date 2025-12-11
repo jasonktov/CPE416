@@ -1,10 +1,6 @@
 import rclpy
 from rclpy.node import Node
 from rclpy.action import ActionClient
-
-import heapq
-import math
-
 from nav_msgs.msg import OccupancyGrid
 from geometry_msgs.msg import Pose
 from geometry_msgs.msg import PoseStamped
@@ -13,9 +9,14 @@ from tf2_ros import Buffer, TransformListener, TransformException
 from tf2_geometry_msgs import do_transform_pose
 from rclpy.duration import Duration
 from nav2_msgs.action import NavigateToPose
-
 from action_msgs.msg import GoalStatus
 
+import heapq
+import math
+from concurrent.futures import Future
+import threading
+
+from group import Group
 
 def world_to_cell(pose_grid: Pose, grid: OccupancyGrid):
     x_world = pose_grid.position.x
@@ -107,6 +108,18 @@ def cell_index_to_world_pose(index: int, grid: OccupancyGrid, stamp) -> PoseStam
 
     return pose
 
+def get_input():
+    future = Future()
+
+    def worker():
+        user_text = input("Y or N")
+        future.set_result(user_text)
+
+    t = threading.Thread(target=worker, daemon=True)
+    t.start()
+
+    return future.result()
+
 # Object orientated nodes for ROS in python
 class Explorer(Node):
 
@@ -144,14 +157,15 @@ class Explorer(Node):
         self.tf_listener = TransformListener(self.tf_buffer, self)
 
         self.cur_map = None
-        self.frontier_map = None
         self.cur_odom = None
 
-        self.groups = [[] for _ in range(255)]
-        self.num_groups = 0
+        self.frontier_cells = []
+        self.frontier_map = None
+
+        self.groups = []
 
         self.goal_cells = []
-        self.cur_goal_cells_i = 0;
+        self.cur_goal_cells_i = 0
 
         timer_period = 5 # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
@@ -166,11 +180,15 @@ class Explorer(Node):
     def timer_callback(self):
         if(self.cur_map is None or self.cur_odom is None):
             return
+
+        self.timer.cancel()
+        #create frontier map
         self.frontier_map = OccupancyGrid()
-        self.frontier_map = self.explore(self.cur_map, self.frontier_map)
-        self.group_frontiers(self.frontier_map)
+        self.create_frontier(self.cur_map)
+        self.group_frontiers()
         self.map_publisher.publish(self.frontier_map)
 
+        #get bot location pose
         cur_pose = PoseStamped()
         cur_pose.header = self.cur_odom.header
         cur_pose.pose = self.cur_odom.pose.pose
@@ -183,24 +201,106 @@ class Explorer(Node):
         )
 
         transformed_pose = do_transform_pose(cur_pose.pose, transform)
-
         bot_i = world_to_cell(transformed_pose, self.frontier_map)
-        self.select_advanced(self.frontier_map, self.groups, bot_i)
-        self.send_goal(self.goal_cells[self.cur_goal_cells_i][1])
 
-    def send_goal(self, goal_i):
-        goal = cell_index_to_world_pose(goal_i, self.frontier_map, self.get_clock().now().to_msg())
+        #create list of goals
+        self.create_goals(bot_i)
+        self.cur_goal_cells_i = 0
+
+        self.send_goal()
+
+        self.timer.reset()
+
+    def create_frontier(self, map:OccupancyGrid):
+        width = map.info.width
+        height = map.info.height
+        map_array = map.data
+
+        self.frontier_map.info = map.info
+        self.frontier_map.header = map.header
+        self.frontier_map.header.stamp = self.get_clock().now().to_msg()
+        self.frontier_map.data = [-1] * width * height
+
+        self.frontier_cells = []
+
+        for i in range(width*height):
+            if(map_array[i] == 0):
+                if(self.check_neighbors(i)):
+                    self.frontier_map.data[i] = 0 #cell is frontier
+                    self.frontier_cells.append(i)
+
+    def check_neighbors(self, i):
+        #returns whether or not the cell is a frontier cell
+        width = self.frontier_map.info.width
+        height = self.frontier_map.info.height
+        map_array = self.frontier_map.data
+
+        neighbor_is = [i - width - 1, i - width, i - width + 1,
+                       i - 1,                    i + 1,
+                       i + width - 1, i + width, i + width + 1]
+
+        for index in neighbor_is:
+            if(0 < index < width * height):
+                if(map_array[index] == -1): 
+                    return True
+        return False
+
+    def group_frontiers(self):
+        self.groups = []
+        cur_group_id = 0
+
+        for cell in self.frontier_cells:
+            group = Group(self.frontier_map, cur_group_id)
+            self.frontier_map.data[cell] = 100 #mark as grouped
+            group.add_cell(cell)
+            self.expand(cell, group)
+
+            self.groups.append(group)
+            cur_group_id += 1
+
+    def expand(self, cell_i, group):
+        width = self.frontier_map.info.width
+
+        neighbor_is = [cell_i - width - 1, cell_i - width, cell_i - width + 1,
+                       cell_i - 1, cell_i + 1,
+                       cell_i + width - 1, cell_i + width, cell_i + width + 1]
+
+        for neighbor in neighbor_is:
+            if neighbor in self.frontier_cells:
+                self.frontier_map[neighbor] = 100
+                group.add_cell(neighbor)
+                self.expand(neighbor, group)
+
+
+    def create_goals(self, bot_i):
+        width = self.frontier_map.info.width
+        self.goal_cells = []
+
+        for group in self.groups:
+            center_dist = group.get_center_dist()
+            closest_edge_i = group.get_closest_edge()
+            heapq.heappush(self.goal_cells, (center_dist, closest_edge_i))
+
+    def send_goal(self):
+        goal_cell = self.goal_cells[self.cur_goal_cells_i][1]
+        goal = cell_index_to_world_pose(goal_cell, self.frontier_map, self.get_clock().now().to_msg())
         self.goal_publisher.publish(goal)
 
-        self._client.wait_for_server()
-        goal_msg = NavigateToPose.Goal()
-        goal_msg.pose = goal
+        self.get_logger().info(f"Sending goal #{self.cur_goal_cells_i}: {goal_cell}")
+        user_input = get_input()
+        if(user_input == 'y'):
+            self._client.wait_for_server()
+            goal_msg = NavigateToPose.Goal()
+            goal_msg.pose = goal
 
-        send_goal_future = self._client.send_goal_async(
-            goal_msg,
-            feedback_callback=self.feedback_callback
-        )
-        send_goal_future.add_done_callback(self.goal_response_callback)
+            send_goal_future = self._client.send_goal_async(
+                goal_msg,
+                feedback_callback=self.feedback_callback
+            )
+            send_goal_future.add_done_callback(self.goal_response_callback)
+        else:
+            #get next goal cell
+            self.send_goal()
 
     def goal_response_callback(self, future):
         goal_handle = future.result()
@@ -234,148 +334,12 @@ class Explorer(Node):
         self.get_logger().info(f"Navigation finished with status {status} ({status_text})")
         if status == GoalStatus.STATUS_ABORTED:
             self.cur_goal_cells_i += 1
-            self.send_goal(self.goal_cells[self.cur_goal_cells_i])
+            self.send_goal()
 
 
     def feedback_callback(self, feedback_msg):
         feedback = feedback_msg.feedback
 
-    def explore(self, map:OccupancyGrid, frontier_map:OccupancyGrid):
-        width = map.info.width
-        height = map.info.height
-        map_array = map.data
-
-        frontier_map.info = map.info
-        frontier_map.header = map.header
-        frontier_map.header.stamp = self.get_clock().now().to_msg()
-        frontier_map.data = [-1] * width * height
-
-        for i in range(width*height):
-            if(map_array[i] == 0):
-                if(self.check_neighbors(i,  map)):
-                    frontier_map.data[i] = 0 #cell is frontier
-
-        return frontier_map
-
-    def check_neighbors(self, i, map: OccupancyGrid):
-        #returns whether or not the cell is a frontier cell
-        width = map.info.width
-        height = map.info.height
-        map_array = map.data
-
-        neighbor_is = [i - width - 1, i - width, i - width + 1,
-                       i - 1,                    i + 1,
-                       i + width - 1, i + width, i + width + 1]
-
-        for index in neighbor_is:
-            if(index > 0 and index < width * height):
-                if(map_array[index] == -1): 
-                    return True
-        return False
-
-    def group_frontiers(self, frontier_map:OccupancyGrid):
-        width = frontier_map.info.width
-        height = frontier_map.info.height
-        frontier_map_array = frontier_map.data
-
-        self.groups = [[] for _ in range(255)]
-        self.num_groups = 0
-
-        for i in range(width * height):
-            if (frontier_map_array[i] == 0):
-                self.num_groups = self.num_groups + 1
-                if(self.num_groups < len(self.groups)):
-                    self.expand(frontier_map, i, self.num_groups, 0)
-
-        self.get_logger().info(f"# of groups : {self.num_groups}")
-        return frontier_map
-
-    def expand(self, frontier_map, i, group, depth):
-        width= frontier_map.info.width
-        frontier_map_array = frontier_map.data
-
-        neighbor_is = [i - width - 1, i - width, i - width + 1,
-                       i - 1, i + 1,
-                       i + width - 1, i + width, i + width + 1]
-
-        #self.get_logger().info(f"depth: {depth}")
-        frontier_map_array[i] = (group % 127) + 1
-        self.groups[group].insert(group, i)
-        if(depth > 900):
-            return
-        for index in neighbor_is:
-            if(index > 0 and index < len(frontier_map_array)):
-                if(frontier_map_array[index] == 0):
-                    self.expand(frontier_map, index, group, depth + 1)
-
-    def select_basic(self, frontier_map:OccupancyGrid, bot_i):
-        width = frontier_map.info.width
-        frontier_map_array = frontier_map.data
-
-        shortest_dist = 100000
-        shortest_index = None
-
-        for index in range(len(frontier_map_array)):
-            if(frontier_map_array[index] != -1):
-                index_x = index % width
-                index_y = math.floor(index / width)
-
-                bot_x = bot_i % width
-                bot_y = math.floor(bot_i / width)
-
-                dist = math.sqrt(((index_x - bot_x) ** 2) + ((index_y - bot_y) ** 2))
-
-                if(shortest_index is None or shortest_dist > dist):
-                    shortest_dist = dist
-                    shortest_index = index
-                #heapq.heappush(self.goal_cells, (dist, index))
-        return shortest_index
-
-    def select_advanced(self, frontier_map:OccupancyGrid, groups, bot_i):
-        width = frontier_map.info.width
-        frontier_map_array = frontier_map.data
-
-        shortest_center_dist = 100000
-        closest_edge_index = None
-
-        bot_x = bot_i % width
-        bot_y = math.floor(bot_i / width)
-
-
-        for group in groups:
-            self.get_logger().info(f"looking at group {group}")
-            #get group size & center node
-            group_size = 0
-            x_sum = 0
-            y_sum = 0
-            closest_edge = None
-            shortest_edge_dist = 100000
-
-            for cell_i in group:
-                group_size += 1
-                x_sum += cell_i % width
-                y_sum += math.floor(cell_i / width)
-
-                index_x = cell_i % width
-                index_y = math.floor(cell_i / width)
-
-                edge_dist = math.sqrt(((index_x - bot_x) ** 2) + ((index_y - bot_y) ** 2))
-
-                if(closest_edge is None or edge_dist < shortest_edge_dist):
-                    closest_edge = cell_i
-                    shortest_edge_dist = edge_dist
-
-            if(group_size > 0):
-                center_x = x_sum/group_size
-                center_y = y_sum.group_size
-                center_dist = math.sqrt(((center_x - bot_x) ** 2) + ((center_y - bot_y) ** 2))
-
-                self.cur_goal_cells_i = 0
-                heapq.heappush(self.goal_cells, (center_dist, closest_edge_index))
-            #if (closest_edge_index is None or center_dist < shortest_center_dist):
-                #closest_edge_index = closest_edge
-                #shortest_center_dist = center_dist
-        return closest_edge_index
 
 def main(args=None):
     rclpy.init(args=args)
