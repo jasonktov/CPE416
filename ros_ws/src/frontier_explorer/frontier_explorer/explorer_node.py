@@ -322,7 +322,6 @@ class Explorer(Node):
                     cur_group_id += 1
 
     def expand(self, cell_i, group, depth):
-        self.get_logger().info(f"{depth}")
         width = self.frontier_map.info.width
 
         neighbor_is = [cell_i - width - 1, cell_i - width, cell_i - width + 1,
