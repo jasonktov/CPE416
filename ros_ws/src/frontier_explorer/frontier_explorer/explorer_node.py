@@ -108,11 +108,11 @@ def cell_index_to_world_pose(index: int, grid: OccupancyGrid, stamp) -> PoseStam
 
     return pose
 
-def get_input():
+def get_input(msg):
     future = Future()
 
     def worker():
-        user_text = input("Y or N")
+        user_text = input(msg)
         future.set_result(user_text)
 
     t = threading.Thread(target=worker, daemon=True)
@@ -167,7 +167,7 @@ class Explorer(Node):
         self.goal_cells = []
         self.cur_goal_cells_i = 0
 
-        timer_period = 5 # seconds
+        timer_period = 0.5 # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
 
     def map_callback(self, msg):
@@ -186,6 +186,8 @@ class Explorer(Node):
         self.frontier_map = OccupancyGrid()
         self.create_frontier(self.cur_map)
         self.group_frontiers()
+        self.get_logger().info(f"{len(self.groups)} groups")
+        self.recolor_frontier_map()
         self.map_publisher.publish(self.frontier_map)
 
         #get bot location pose
@@ -205,11 +207,9 @@ class Explorer(Node):
 
         #create list of goals
         self.create_goals(bot_i)
+
         self.cur_goal_cells_i = 0
-
-        self.send_goal()
-
-        self.timer.reset()
+        self.send_next_goal()
 
     def create_frontier(self, map:OccupancyGrid):
         width = map.info.width
@@ -250,13 +250,16 @@ class Explorer(Node):
         cur_group_id = 0
 
         for cell in self.frontier_cells:
-            group = Group(self.frontier_map, cur_group_id)
-            self.frontier_map.data[cell] = 100 #mark as grouped
-            group.add_cell(cell)
-            self.expand(cell, group)
+            if self.frontier_map.data[cell] != 100:
+                group = Group(self.frontier_map, cur_group_id)
+                self.frontier_map.data[cell] = 100 #mark as grouped
+                group.add_cell(cell)
+                self.expand(cell, group)
 
-            self.groups.append(group)
-            cur_group_id += 1
+                #only add groups with more than one frontier cell
+                if len(group.cells) > 1:
+                    self.groups.append(group)
+                    cur_group_id += 1
 
     def expand(self, cell_i, group):
         width = self.frontier_map.info.width
@@ -266,29 +269,34 @@ class Explorer(Node):
                        cell_i + width - 1, cell_i + width, cell_i + width + 1]
 
         for neighbor in neighbor_is:
-            if neighbor in self.frontier_cells:
-                self.frontier_map[neighbor] = 100
+            if neighbor in self.frontier_cells and self.frontier_map.data[neighbor] != 100:
+                self.frontier_map.data[neighbor] = 100
                 group.add_cell(neighbor)
                 self.expand(neighbor, group)
 
+    def recolor_frontier_map(self):
+        for group in self.groups:
+            for cell_i in group.cells:
+                self.frontier_map.data[cell_i] = group.group_id
 
     def create_goals(self, bot_i):
-        width = self.frontier_map.info.width
         self.goal_cells = []
 
         for group in self.groups:
-            center_dist = group.get_center_dist()
-            closest_edge_i = group.get_closest_edge()
+            center_dist = group.get_center_dist(bot_i)
+            closest_edge_i = group.get_closest_edge(bot_i)
             heapq.heappush(self.goal_cells, (center_dist, closest_edge_i))
 
-    def send_goal(self):
+    def send_next_goal(self):
         goal_cell = self.goal_cells[self.cur_goal_cells_i][1]
         goal = cell_index_to_world_pose(goal_cell, self.frontier_map, self.get_clock().now().to_msg())
         self.goal_publisher.publish(goal)
 
-        self.get_logger().info(f"Sending goal #{self.cur_goal_cells_i}: {goal_cell}")
-        user_input = get_input()
-        if(user_input == 'y'):
+        self.get_logger().info(f"Send goal #{self.cur_goal_cells_i}? | goal cell:{goal_cell} | goal pose:{goal}")
+        self.cur_goal_cells_i += 1
+        user_input = get_input("y:send goal n:next goal r:abort & redraw groups")
+        if(user_input == "y"):
+            self.get_logger().info(f"Goal Sent")
             self._client.wait_for_server()
             goal_msg = NavigateToPose.Goal()
             goal_msg.pose = goal
@@ -298,15 +306,23 @@ class Explorer(Node):
                 feedback_callback=self.feedback_callback
             )
             send_goal_future.add_done_callback(self.goal_response_callback)
-        else:
+        elif(user_input == "n"):
             #get next goal cell
-            self.send_goal()
+            self.send_next_goal()
+        elif(user_input == "r"):
+            self.get_logger().info(f"Aborted")
+            self.timer.reset()
+        else:
+            self.get_logger().info(f"Invalid Input, Aborted")
+            self.timer.reset()
+
 
     def goal_response_callback(self, future):
         goal_handle = future.result()
 
         if not goal_handle.accepted:
             self.get_logger().info('Goal rejected')
+            self.timer.reset()
             return
 
         self.get_logger().info('Goal accepted')
@@ -333,12 +349,14 @@ class Explorer(Node):
 
         self.get_logger().info(f"Navigation finished with status {status} ({status_text})")
         if status == GoalStatus.STATUS_ABORTED:
-            self.cur_goal_cells_i += 1
-            self.send_goal()
+            self.send_next_goal()
+        else:
+            self.timer.reset()
 
 
     def feedback_callback(self, feedback_msg):
         feedback = feedback_msg.feedback
+        self.get_logger().info('Moving...')
 
 
 def main(args=None):
