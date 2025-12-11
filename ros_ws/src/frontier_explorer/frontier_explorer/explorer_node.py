@@ -243,10 +243,12 @@ class Explorer(Node):
         self.frontier_map = OccupancyGrid()
         self.create_frontier(self.cur_map)
         self.get_logger().info(f"{len(self.frontier_cells)} frontier cells")
+        self.map_publisher.publish(self.frontier_map)
+
         self.group_frontiers()
         self.get_logger().info(f"{len(self.groups)} groups")
         self.recolor_frontier_map()
-        self.map_publisher.publish(self.frontier_map)
+        #self.map_publisher.publish(self.frontier_map)
 
         #get bot location pose
         cur_pose = PoseStamped()
