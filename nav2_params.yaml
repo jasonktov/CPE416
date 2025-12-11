@@ -31,8 +31,8 @@ controller_server:        #takes the global path and turns it into /cmd_vel
 
       # ----- EDIT FOR ROBOT SPEEDS -----
       max_vel_x: 0.4        #forward speed (m/s)
-      min_vel_x: 0.05        
-      max_vel_theta: 1.0    #rotational speed (rad/s)
+      min_vel_x: 0.1        
+      max_vel_theta: 0.5    #rotational speed (rad/s)
       min_vel_theta: 0.1
       acc_lim_x: 0.5        #linear acceleration
       acc_lim_theta: 2.0    #max angular acceleration
