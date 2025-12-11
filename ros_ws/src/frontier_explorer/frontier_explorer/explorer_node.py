@@ -311,14 +311,15 @@ class Explorer(Node):
                 group = Group(self.frontier_map, cur_group_id)
                 self.frontier_map.data[cell] = 100 #mark as grouped
                 group.add_cell(cell)
-                self.expand(cell, group)
+                self.expand(cell, group, 1)
 
                 #only add groups with more than one frontier cell
                 if len(group.cells) > 1:
                     self.groups.append(group)
                     cur_group_id += 1
 
-    def expand(self, cell_i, group):
+    def expand(self, cell_i, group, depth):
+        self.get_logger().info(f"{depth}")
         width = self.frontier_map.info.width
 
         neighbor_is = [cell_i - width - 1, cell_i - width, cell_i - width + 1,
@@ -329,7 +330,7 @@ class Explorer(Node):
             if neighbor in self.frontier_cells and self.frontier_map.data[neighbor] != 100:
                 self.frontier_map.data[neighbor] = 100
                 group.add_cell(neighbor)
-                self.expand(neighbor, group)
+                self.expand(neighbor, group, depth + 1)
 
     def recolor_frontier_map(self):
         for group in self.groups:
