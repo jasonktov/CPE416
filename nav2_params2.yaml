@@ -425,7 +425,7 @@ behavior_server:
       deceleration_limit: -2.5
       minimum_speed: 0.10
     wait:
-      plugin: "nav2_behaviors::Wait"\
+      plugin: "nav2_behaviors::Wait"
     local_frame: odom
     global_frame: map
     robot_base_frame: base_link
