@@ -244,8 +244,6 @@ class Explorer(Node):
         self.create_frontier(self.cur_map)
         self.get_logger().info(f"{len(self.frontier_cells)} frontier cells")
         self.map_publisher.publish(self.frontier_map)
-        while(1):
-            i = 1
 
         self.group_frontiers()
         self.get_logger().info(f"{len(self.groups)} groups")
