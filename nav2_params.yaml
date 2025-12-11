@@ -108,11 +108,19 @@ local_costmap:                      #smaller map centerd on the robot, used for 
       inflation_radius: 0.5
       cost_scaling_factor: 3.0
 
-bt_navigator:          #runs a Behavior Tree, which is like the "brain script" for navigation
+bt_navigator:
   ros__parameters:
     use_sim_time: false
     global_frame: map
     robot_base_frame: base_link
+
+    # ----- NEW: SLOWER SPIN RECOVERY -----
+    spin_recovery:
+      # rad/s — default is usually around ~1.0
+      rotate_speed: 0.2      # ↓ greatly slows down spin recovery
+      min_rotate_speed: 0.05 # prevents jerky motion
+      acc_lim_theta: 0.4     # smoother angular acceleration
+    # -------------------------------------
 
 waypoint_follower:            
   ros__parameters:
