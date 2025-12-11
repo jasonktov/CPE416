@@ -287,22 +287,22 @@ class Explorer(Node):
 
         for i in range(width*height):
             if(map_array[i] == 0):
-                if(self.check_neighbors(i)):
+                if(self.check_neighbors(map, i)):
                     self.frontier_map.data[i] = 0 #cell is frontier
                     self.frontier_cells.append(i)
 
-    def check_neighbors(self, i):
+    def check_neighbors(self, map:OccupancyGrid, i):
         #returns whether or not the cell is a frontier cell
-        width = self.frontier_map.info.width
-        height = self.frontier_map.info.height
-        map_array = self.frontier_map.data
+        width = map.info.width
+        height = map.info.height
+        map_array = map.data
 
         neighbor_is = [i - width - 1, i - width, i - width + 1,
                        i - 1,                    i + 1,
                        i + width - 1, i + width, i + width + 1]
 
         for index in neighbor_is:
-            if(0 < index < width * height):
+            if(index > 0 and index < width * height):
                 if(map_array[index] == -1): 
                     return True
         return False
